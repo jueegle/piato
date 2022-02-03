@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+    <solid android:color="@color/white" />
+    <corners android:radius="32dp" />
+    <padding
+        android:bottom="@dimen/padding_report_relapse_vertical"
+        android:left="@dimen/padding_report_relapse_horizontal"
+        android:right="@dimen/padding_report_relapse_horizontal"
+        android:top="@dimen/padding_report_relapse_vertical" />
+    <stroke
+        android:width="2dp"
+        android:color="@color/blue_1" />
+</shape>

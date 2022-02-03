@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/home_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="@dimen/padding_page_bottom_96dp">
+
+            <TextView
+                android:id="@+id/navigation_back"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:text="@string/back"
+                app:drawableStartCompat="@drawable/icon_baseline_arrow_back"
+                app:drawableTint="@color/blue_1"
+                style="@style/ButtonBack" />
+
+            <TextView
+                android:id="@+id/floodlight_title"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/navigation_back"
+                android:text="@string/floodlight_tests"
+                app:drawableTint="@color/blue_1"
+                app:drawableEndCompat="@drawable/icon_info"
+                style="@style/HomeTitle" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/floodlight_conLay_tracing_shapes"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/knowledge_list_item_height"
+                android:layout_margin="@dimen/margin_16dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/floodlight_title"
+                app:layout_constraintBottom_toTopOf="@id/floodlight_conLay_squeeze_tomatoes"
+                style="@style/ImageCard">
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/floodlight_image_tracing_shapes"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:adjustViewBounds="true"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/floodlight_1"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:shapeAppearanceOverlay="@style/ShapeAppearance.ImageCardKnowledgeList" />
+
+                <TextView
+                    android:id="@+id/floodlight_list_draw_shape_tv"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_margin="@dimen/margin_8dp"
+                    android:text="@string/floodlight_test_draw_shape"
+                    android:gravity="center_vertical"
+                    android:textColor="@color/blue_1"
+                    app:layout_constraintStart_toEndOf="@id/floodlight_image_tracing_shapes"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    style="@style/Subtitle" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/floodlight_conLay_squeeze_tomatoes"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/knowledge_list_item_height"
+                android:layout_margin="@dimen/margin_16dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/floodlight_conLay_tracing_shapes"
+                style="@style/ImageCard">
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/floodlight_image_squeeze_tomatoes"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:adjustViewBounds="true"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/floodlight_2"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:shapeAppearanceOverlay="@style/ShapeAppearance.ImageCardKnowledgeList" />
+
+                <TextView
+                    android:id="@+id/floodlight_list_pinching_tv"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_margin="@dimen/margin_8dp"
+                    android:text="@string/floodlight_test_pinching"
+                    android:gravity="center_vertical"
+                    android:textColor="@color/blue_1"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/floodlight_image_squeeze_tomatoes"
+                    app:layout_constraintTop_toTopOf="parent"
+                    style="@style/Subtitle" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/floodlight_conLay_cognitive_test"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/knowledge_list_item_height"
+                android:layout_margin="@dimen/margin_16dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/floodlight_conLay_squeeze_tomatoes"
+                style="@style/ImageCard">
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/floodlight_image_cognitive_test"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:adjustViewBounds="true"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/floodlight_3"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:shapeAppearanceOverlay="@style/ShapeAppearance.ImageCardKnowledgeList" />
+
+                <TextView
+                    android:id="@+id/floodlight_list_cognitive_tv"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_margin="@dimen/margin_8dp"
+                    android:text="@string/floodlight_test_symbols"
+                    android:gravity="center_vertical"
+                    android:textColor="@color/blue_1"
+                    app:layout_constraintStart_toEndOf="@id/floodlight_image_cognitive_test"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    style="@style/Subtitle" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/floodlight_conLay_turn_around_test"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/knowledge_list_item_height"
+                android:layout_margin="@dimen/margin_16dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/floodlight_conLay_cognitive_test"
+                style="@style/ImageCard">
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/floodlight_image_livability"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:adjustViewBounds="true"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/floodlight_4"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:shapeAppearanceOverlay="@style/ShapeAppearance.ImageCardKnowledgeList" />
+
+                <TextView
+                    android:id="@+id/floodlight_list_u_turn_tv"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_margin="@dimen/margin_8dp"
+                    android:text="@string/floodlight_test_u_turn"
+                    android:gravity="center_vertical"
+                    android:textColor="@color/blue_1"
+                    app:layout_constraintStart_toEndOf="@id/floodlight_image_livability"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    style="@style/Subtitle" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/floodlight_conLay_results"
+                style="@style/ImageCard"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/margin_64dp"
+                android:layout_margin="@dimen/margin_16dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/floodlight_conLay_turn_around_test"
+                app:layout_constraintBottom_toBottomOf="parent">
+
+                <TextView
+                    android:id="@+id/floodlight_results_text"
+                    style="@style/Subtitle"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="@dimen/margin_16dp"
+                    android:gravity="center_vertical"
+                    android:text="@string/floodlight_tests_results"
+                    android:textColor="@color/blue_1"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/imageView_floodlight_results"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/imageView_floodlight_results"
+                    android:layout_width="@dimen/icon_size"
+                    android:layout_height="@dimen/icon_size"
+                    android:layout_marginEnd="@dimen/margin_16dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:srcCompat="@drawable/ic_baseline_arrow_forward_24"
+                    app:tint="@color/blue_1"
+                    android:contentDescription="@string/placeholder_icon" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

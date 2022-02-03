@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/chart_livability"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/card_livability_progress"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="@+id/livability_line_chart"
+        app:layout_constraintDimensionRatio="1:6"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/livability_line_chart">
+
+        <TextView
+            android:id="@+id/livability_y_scale_10"
+            android:layout_height="0dp"
+            android:layout_width="0dp"
+            android:text="@string/number_10"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:gravity="center"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/livability_y_scale_8"
+            android:layout_height="0dp"
+            android:layout_width="0dp"
+            android:text="@string/number_8"
+            android:textColor="@color/black"
+            android:gravity="center"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/livability_y_scale_10" />
+
+        <TextView
+            android:id="@+id/livability_y_scale_6"
+            android:layout_height="0dp"
+            android:layout_width="0dp"
+            android:text="@string/number_6"
+            android:textColor="@color/black"
+            android:gravity="center"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/livability_y_scale_8" />
+
+        <TextView
+            android:id="@+id/livability_y_scale_4"
+            android:layout_height="0dp"
+            android:layout_width="0dp"
+            android:text="@string/number_4"
+            android:textColor="@color/black"
+            android:gravity="center"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/livability_y_scale_6" />
+
+        <TextView
+            android:id="@+id/livability_y_scale_2"
+            android:layout_height="0dp"
+            android:layout_width="0dp"
+            android:text="@string/number_2"
+            android:textColor="@color/black"
+            android:gravity="center"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/livability_y_scale_4" />
+
+        <TextView
+            android:id="@+id/livability_y_scale_0"
+            android:layout_height="0dp"
+            android:layout_width="0dp"
+            android:text="@string/number_0"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:gravity="center"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/livability_y_scale_2" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <com.github.mikephil.charting.charts.LineChart
+        android:id="@+id/livability_line_chart"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/line_chart_height"
+        android:minHeight="@dimen/line_chart_height"
+        android:layout_marginEnd="@dimen/margin_8dp"
+        android:layout_marginBottom="@dimen/margin_16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/card_livability_progress"
+        app:layout_constraintTop_toTopOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

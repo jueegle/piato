@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout android:id="@+id/layout_slider"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintBottom_toBottomOf="parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <TextView
+        android:id="@+id/title_slider"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/slider_value"
+        android:text="@string/title_fatigue"
+        style="@style/SubtitleSymptom" />
+
+    <TextView
+        android:id="@+id/slider_value"
+        app:layout_constraintStart_toStartOf="@id/slider_background"
+        app:layout_constraintEnd_toEndOf="@id/slider_background"
+        app:layout_constraintTop_toBottomOf="@id/title_slider"
+        app:layout_constraintBottom_toTopOf="@id/slider_background"
+        style="@style/SliderValue"/>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/slider_background"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/slider_header_left"
+        style="@style/SliderBackground">
+
+        <com.google.android.material.slider.Slider
+            android:id="@+id/slider"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            style="@style/Slider"/>
+
+        <Button
+            android:id="@+id/button_minus_slider"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:enabled="false"
+            android:text="@string/minus"
+            style="@style/ButtonPlusMinus" />
+
+        <Button
+            android:id="@+id/button_plus_slider"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:text="@string/plus"
+            android:backgroundTint="@color/blue_1"
+            style="@style/ButtonPlusMinus" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TextView
+        android:id="@+id/slider_header_left"
+        app:layout_constraintStart_toStartOf="@id/slider_background"
+        app:layout_constraintTop_toBottomOf="@id/slider_background"
+        android:text="@string/none"
+        style="@style/SliderHeader" />
+
+    <TextView
+        android:id="@+id/slider_header_right"
+        app:layout_constraintEnd_toEndOf="@id/slider_background"
+        app:layout_constraintTop_toBottomOf="@id/slider_background"
+        android:text="@string/strong"
+        style="@style/SliderHeader" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/last_entry"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_8dp"
+        android:layout_marginStart="@dimen/margin_16dp"
+        android:layout_marginEnd="@dimen/margin_16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/slider_header_left">
+
+        <TextView
+            android:id="@+id/last_entry_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/last_entry_value"
+            app:layout_constraintBottom_toBottomOf="@id/last_entry_value"
+            android:text="@string/last_entry"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:textSize="@dimen/text_size_16sp"/>
+
+        <TextView
+            android:id="@+id/last_entry_timestamp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toEndOf="@id/last_entry_text"
+            app:layout_constraintEnd_toStartOf="@id/last_entry_value"
+            app:layout_constraintTop_toTopOf="@id/last_entry_value"
+            app:layout_constraintBottom_toBottomOf="@id/last_entry_value"
+            android:text="@string/placeholder_date"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_size_16sp"/>
+
+        <TextView
+            android:id="@+id/last_entry_value"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            style="@style/SliderValue"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

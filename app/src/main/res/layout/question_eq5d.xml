@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/home_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/questionnaire_cancel"
+        style="@style/ButtonBack"
+        android:text="@string/cancel"
+        android:layout_marginTop="@dimen/margin_48dp"
+        app:drawableStartCompat="@drawable/ic_baseline_close_24"
+        app:drawableTint="@color/blue_1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/questionnaire_title"
+        style="@style/HomeTitle"
+        android:layout_marginTop="@dimen/margin_12dp"
+        android:text="@string/questionnaires"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/questionnaire_cancel" />
+
+    <com.google.android.material.progressindicator.LinearProgressIndicator
+        android:id="@+id/questionnaire_progress_indicator"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_16dp"
+        android:layout_marginEnd="@dimen/margin_16dp"
+        android:layout_marginTop="@dimen/margin_8dp"
+        app:trackThickness="@dimen/line_progress_indicator_trackThickness"
+        app:trackCornerRadius="@dimen/line_progress_indicator_trackCornerRadius"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/questionnaire_title" />
+
+    <ImageView
+        android:id="@+id/eq5d5l_intro_icon"
+        android:visibility="gone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_gravity="center"
+        android:src="@drawable/eq5d5l_intro_icon"
+        android:contentDescription="@string/placeholder_icon"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/questionnaire_progress_indicator" />
+
+    <TextView
+        android:id="@+id/eq5d5l_intro_text_1"
+        android:visibility="gone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_64dp"
+        android:paddingStart="@dimen/margin_16dp"
+        android:paddingEnd="@dimen/margin_16dp"
+        android:textSize="@dimen/text_size_24sp"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/eq5d5l_intro_icon" />
+
+    <TextView
+        android:id="@+id/eq5d5l_intro_text_2"
+        android:visibility="gone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_64dp"
+        android:paddingStart="@dimen/margin_16dp"
+        android:paddingEnd="@dimen/margin_16dp"
+        android:textSize="@dimen/text_size_24sp"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/eq5d5l_intro_text_1" />
+
+    <WebView
+        android:id="@+id/question_infotext_eq5d_webview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:autoLink="web"
+        android:layout_margin="@dimen/margin_16dp"
+        android:textIsSelectable="true"
+        android:backgroundTint="@color/transparent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/eq5d5l_intro_text_2" />
+
+    <TextView
+        android:id="@+id/question_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/eq5d5l_intro_icon"
+        android:layout_marginTop="@dimen/margin_8dp"
+        android:paddingStart="@dimen/margin_16dp"
+        android:paddingEnd="@dimen/margin_16dp"
+        android:paddingTop="@dimen/margin_4dp"
+        android:paddingBottom="@dimen/margin_4dp"
+        android:text="@string/placeholder_short_text"
+        android:textColor="@color/white"
+        android:background="@color/blue_2"
+        android:textStyle="bold"
+        android:textSize="@dimen/text_size_20sp"/>
+
+    <TextView
+        android:id="@+id/question_description"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingStart="@dimen/margin_16dp"
+        android:paddingEnd="@dimen/margin_16dp"
+        android:paddingTop="@dimen/margin_4dp"
+        android:paddingBottom="@dimen/margin_4dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/question_text"
+        android:text="@string/placeholder_very_short_text"
+        android:background="@color/blue_2"
+        android:textColor="@color/white"
+        android:textStyle="italic|bold"
+        android:textSize="@dimen/text_size_20sp"/>
+
+    <LinearLayout
+        android:id="@+id/question_body"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="@dimen/margin_4dp"
+        android:layout_marginStart="@dimen/margin_16dp"
+        android:layout_marginEnd="@dimen/margin_16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/question_description">
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/question_foot_note"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:text="@string/eq5d_foot_note"
+        android:textStyle="italic"
+        app:layout_constraintVertical_bias="1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/question_body"
+        app:layout_constraintBottom_toTopOf="@id/navigation_back" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/navigation_back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_16dp"
+        android:layout_marginTop="@dimen/margin_24dp"
+        android:layout_marginBottom="@dimen/margin_16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <TextView
+            android:id="@+id/navigation_back_eq5d"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/shape_button_navigation_eq5d"
+            android:paddingTop="@dimen/margin_8dp"
+            android:paddingBottom="@dimen/margin_8dp"
+            android:paddingStart="@dimen/margin_16dp"
+            android:paddingEnd="@dimen/margin_36dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:text="@string/back"
+            android:textSize="@dimen/text_size_20sp"
+            android:textColor="@color/blue_1"
+            android:textStyle="bold"
+            app:drawableStartCompat="@drawable/icon_baseline_arrow_back"
+            android:drawablePadding="@dimen/margin_12dp"
+            app:drawableTint="@color/blue_1" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/navigation_next"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/margin_16dp"
+        android:layout_marginTop="@dimen/margin_24dp"
+        android:layout_marginBottom="@dimen/margin_16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <TextView
+            android:id="@+id/navigation_next_eq5d"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/shape_button_navigation_eq5d"
+            android:padding="@dimen/margin_8dp"
+            android:paddingBottom="@dimen/margin_8dp"
+            android:paddingStart="@dimen/margin_36dp"
+            android:paddingEnd="@dimen/margin_16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:text="@string/next"
+            android:textSize="@dimen/text_size_20sp"
+            android:textColor="@color/blue_1"
+            android:textStyle="bold"
+            app:drawableEndCompat="@drawable/icon_baseline_arrow_forward"
+            android:drawablePadding="@dimen/margin_12dp"
+            app:drawableTint="@color/blue_1" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/navigation_next_disabled"
+        android:visibility="gone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/margin_16dp"
+        android:layout_marginTop="@dimen/margin_24dp"
+        android:layout_marginBottom="@dimen/margin_16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <TextView
+            android:id="@+id/navigation_next_eq5d_disabled"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/shape_button_navigation_eq5d_disabled"
+            android:padding="@dimen/margin_8dp"
+            android:paddingBottom="@dimen/margin_8dp"
+            android:paddingStart="@dimen/margin_36dp"
+            android:paddingEnd="@dimen/margin_16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:text="@string/next"
+            android:textSize="@dimen/text_size_20sp"
+            android:textColor="@color/gray_2"
+            android:textStyle="bold"
+            app:drawableEndCompat="@drawable/icon_baseline_arrow_forward"
+            android:drawablePadding="@dimen/margin_12dp"
+            app:drawableTint="@color/gray_2" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

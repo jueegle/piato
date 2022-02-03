@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/home_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/medical_query_desc_layout"
+            android:paddingBottom="@dimen/padding_page_bottom_96dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/navigation_back"
+                style="@style/ButtonBack"
+                android:text="@string/back"
+                android:textColor="@color/blue_1"
+                app:drawableStartCompat="@drawable/icon_baseline_arrow_back"
+                app:drawableTint="@color/blue_1"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/medical_query_desc_title"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/navigation_back"
+                app:layout_constraintBottom_toTopOf="@id/medical_query_desc_card"
+                android:text="@string/edss"
+                style="@style/HomeTitle" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/medical_query_desc_card"
+                style="@style/Card"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/margin_8dp"
+                app:layout_constraintBottom_toTopOf="@+id/medical_query_start_button"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/medical_query_desc_title">
+
+                <TextView
+                    android:id="@+id/medical_query_desc_desc"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="@dimen/margin_8dp"
+                    android:text="@string/placeholder_long_text"
+                    android:textSize="@dimen/text_size_18sp"
+                    android:textColor="@color/black"
+                    android:lineSpacingMultiplier="1.2"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <Button
+                android:id="@+id/medical_query_start_button"
+                style="@style/Button"
+                android:layout_marginTop="@dimen/margin_16dp"
+                android:text="@string/abfrage_starten"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/medical_query_desc_card"
+                app:layout_constraintBottom_toBottomOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

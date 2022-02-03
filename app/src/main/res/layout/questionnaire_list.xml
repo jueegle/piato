@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/home_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/scrollView_questionnaire_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingBottom="@dimen/padding_page_bottom_96dp">
+
+            <TextView
+                android:id="@+id/navigation_back"
+                style="@style/ButtonBack"
+                android:text="@string/back"
+                app:drawableStartCompat="@drawable/icon_baseline_arrow_back"
+                app:drawableTint="@color/blue_1"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/questionnaire_title"
+                style="@style/HomeTitle"
+                app:drawableEndCompat="@drawable/icon_info"
+                android:text="@string/questionnaires"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/navigation_back" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/status_selection"
+                app:layout_constraintTop_toBottomOf="@id/questionnaire_title"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginStart="@dimen/margin_16dp"
+                android:layout_marginEnd="@dimen/margin_16dp"
+                android:layout_marginTop="@dimen/margin_8dp"
+                android:layout_marginBottom="@dimen/margin_8dp"
+                android:layout_height="@dimen/horizontal_single_select_tabs_height"
+                android:layout_width="match_parent"
+                android:elevation="@dimen/elevation_6dp"
+                android:background="@drawable/selection_background"
+                android:padding="3dp">
+
+                <TextView
+                    android:id="@+id/questionnaire_open"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:text="@string/open"
+                    android:textColor="@color/white"
+                    android:gravity="center"
+                    android:textStyle="bold"
+                    android:textSize="@dimen/text_size_20sp"
+                    android:background="@drawable/selection_item_blue"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/questionnaire_completed"/>
+
+                <TextView
+                    android:id="@+id/questionnaire_completed"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:text="@string/completed"
+                    android:textColor="@color/blue_1"
+                    android:gravity="center"
+                    android:textStyle="bold"
+                    android:textSize="@dimen/text_size_20sp"
+                    android:background="@drawable/selection_item_white"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/questionnaire_open"
+                    app:layout_constraintEnd_toEndOf="parent"/>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/questionnaire_list"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/status_selection"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layoutManager="LinearLayoutManager"
+                android:layout_marginTop="@dimen/margin_16dp"
+                tools:listitem="@layout/questionnaire_recycler_view_item" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

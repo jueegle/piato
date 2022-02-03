@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingBottom="@dimen/padding_page_bottom_96dp">
+
+        <TextView
+            android:id="@+id/navigation_back"
+            style="@style/ButtonBack"
+            android:text="@string/back"
+            app:drawableStartCompat="@drawable/icon_baseline_arrow_back"
+            app:drawableTint="@color/blue_1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/mfis_title"
+            style="@style/HomeTitle"
+            android:text="@string/mfis"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/navigation_back" />
+
+        <com.google.android.material.progressindicator.LinearProgressIndicator
+            android:id="@+id/mfis_progressBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_16dp"
+            android:layout_marginEnd="@dimen/margin_16dp"
+            android:layout_marginTop="@dimen/margin_16dp"
+            app:trackThickness="@dimen/line_progress_indicator_trackThickness"
+            app:trackCornerRadius="@dimen/line_progress_indicator_trackCornerRadius"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/mfis_title" />
+
+        <TextView
+            android:id="@+id/mfis_index_indicator"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_16dp"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_size_20sp"
+            android:text="@string/placeholder_x_from_21"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/mfis_progressBar" />
+
+        <TextView
+            android:id="@+id/mfis_text_1"
+            style="@style/EDSSResultsQuestionCard"
+            android:textSize="@dimen/text_size_20sp"
+            android:text="@string/mfis_question_text_1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/mfis_index_indicator" />
+
+        <TextView
+            android:id="@+id/mfis_question_tv"
+            android:layout_marginTop="@dimen/margin_16dp"
+            style="@style/EDSSResultsAnswerCard"
+            android:text="@string/placeholder_short_text"
+            android:textColor="@color/white"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/mfis_text_1" />
+
+        <TextView
+            android:id="@+id/slider_value"
+            style="@style/SliderValue"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/mfis_question_tv" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/slider_background"
+            style="@style/SliderBackground"
+            android:layout_marginTop="@dimen/margin_16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/slider_value">
+
+            <com.google.android.material.slider.Slider
+                android:id="@+id/mfis_slider"
+                app:thumbColor="@color/transparent"
+                app:thumbElevation="0dp"
+                style="@style/MFISSlider"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <Button
+                android:id="@+id/mfis_button_minus_slider"
+                style="@style/ButtonPlusMinus"
+                android:enabled="false"
+                android:text="@string/minus"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent" />
+
+            <Button
+                android:id="@+id/mfis_button_plus_slider"
+                style="@style/ButtonPlusMinus"
+                android:enabled="false"
+                android:text="@string/plus"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <TextView
+            android:id="@+id/slider_header_left"
+            style="@style/SliderHeader"
+            android:text="@string/never"
+            app:layout_constraintStart_toStartOf="@id/slider_background"
+            app:layout_constraintTop_toBottomOf="@id/slider_background" />
+
+        <TextView
+            android:id="@+id/slider_header_right"
+            style="@style/SliderHeader"
+            android:text="@string/almost_always"
+            app:layout_constraintEnd_toEndOf="@id/slider_background"
+            app:layout_constraintTop_toBottomOf="@id/slider_background" />
+
+        <Button
+            android:id="@+id/mfis_cancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_16dp"
+            android:layout_marginTop="@dimen/margin_16dp"
+            android:background="@drawable/transparent_button"
+            app:icon="@drawable/icon_baseline_close"
+            app:iconPadding="@dimen/margin_8dp"
+            style="@style/Widget.MaterialComponents.Button.TextButton"
+            android:text="@string/cancel"
+            android:letterSpacing="0.05"
+            android:textColor="@color/blue_1"
+            android:textSize="@dimen/text_size_20sp"
+            android:textAllCaps="false"
+            android:fontFamily="sans-serif"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/slider_header_right"
+            app:layout_constraintBottom_toBottomOf="parent" />
+
+        <Button
+            android:id="@+id/mfis_next"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_16dp"
+            android:layout_marginEnd="@dimen/margin_16dp"
+            android:background="@drawable/transparent_button"
+            android:enabled="false"
+            app:icon="@drawable/icon_baseline_arrow_forward"
+            app:iconGravity="end"
+            app:iconPadding="@dimen/margin_8dp"
+            style="@style/Widget.MaterialComponents.Button.TextButton"
+            android:text="@string/next"
+            android:letterSpacing="0.05"
+            android:textStyle="bold"
+            android:textSize="@dimen/text_size_20sp"
+            android:textAllCaps="false"
+            android:fontFamily="sans-serif"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/slider_header_right"
+            app:layout_constraintBottom_toBottomOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>

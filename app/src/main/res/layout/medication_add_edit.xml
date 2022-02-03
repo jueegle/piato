@@ -1,0 +1,310 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/home_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/padding_page_bottom_96dp">
+
+            <TextView
+                android:id="@+id/navigation_back"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:text="@string/back"
+                app:drawableStartCompat="@drawable/icon_baseline_arrow_back"
+                app:drawableTint="@color/blue_1"
+                style="@style/ButtonBack" />
+
+            <TextView
+                android:id="@+id/medication_add_edit_title"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/navigation_back"
+                android:text="@string/add_medication"
+                app:drawableTint="@color/blue_1"
+                app:drawableEndCompat="@drawable/icon_info"
+                style="@style/HomeTitle" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/medication_title_textfield"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/medication_add_edit_title"
+                app:layout_constraintBottom_toTopOf="@id/medication_amount_textfield"
+                android:hint="@string/descpription"
+                style="@style/TextField">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/medication_title_input"
+                    style="@style/EditText"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/medication_amount_textfield"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/medication_title_textfield"
+                app:layout_constraintBottom_toTopOf="@id/medication_start_date_textfield"
+                android:hint="@string/amount"
+                style="@style/TextField">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/medication_amount_input"
+                    style="@style/EditText"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/medication_start_date_textfield"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/medication_amount_textfield"
+                app:layout_constraintBottom_toTopOf="@id/medication_intake_time_1"
+                android:hint="@string/start_date"
+                style="@style/TextField">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/medication_start_date_input"
+                    android:focusable="false"
+                    android:clickable="false"
+                    style="@style/EditText"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/medication_intake_time_1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/medication_start_date_textfield"
+                app:layout_constraintBottom_toTopOf="@id/medication_intake_time_2">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/medication_intake_timestamp_1_textfield"
+                    android:layout_width="0dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:hint="@string/intake_time"
+                    style="@style/TextField">
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/medication_intake_timestamp_1_input"
+                        android:focusable="false"
+                        android:clickable="false"
+                        style="@style/EditText"/>
+                </com.google.android.material.textfield.TextInputLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/medication_intake_time_2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/medication_intake_time_1"
+                app:layout_constraintBottom_toTopOf="@id/medication_intake_time_3">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/medication_intake_timestamp_2_textfield"
+                    android:layout_width="0dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/medication_remove_timestamp_2"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:hint="@string/intake_time"
+                    style="@style/TextField">
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/medication_intake_timestamp_2_input"
+                        android:focusable="false"
+                        android:clickable="false"
+                        style="@style/EditText"/>
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <ImageView
+                    android:id="@+id/medication_remove_timestamp_2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintDimensionRatio="1:1"
+                    android:layout_marginEnd="@dimen/margin_16dp"
+                    android:src="@drawable/icon_delete"
+                    android:contentDescription="@string/placeholder_icon"
+                    app:tint="@color/blue_1"
+                    app:layout_constraintStart_toEndOf="@id/medication_intake_timestamp_2_textfield"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/medication_intake_time_3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/medication_intake_time_2"
+                app:layout_constraintBottom_toTopOf="@id/medication_intake_time_4">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/medication_intake_timestamp_3_textfield"
+                    android:layout_width="0dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/medication_remove_timestamp_3"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:hint="@string/intake_time"
+                    style="@style/TextField">
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/medication_intake_timestamp_3_input"
+                        android:focusable="false"
+                        android:clickable="false"
+                        style="@style/EditText"/>
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <ImageView
+                    android:id="@+id/medication_remove_timestamp_3"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintDimensionRatio="1:1"
+                    android:layout_marginEnd="@dimen/margin_16dp"
+                    android:src="@drawable/icon_delete"
+                    android:contentDescription="@string/placeholder_icon"
+                    app:tint="@color/blue_1"
+                    app:layout_constraintStart_toEndOf="@id/medication_intake_timestamp_3_textfield"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/medication_intake_time_4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/medication_intake_time_3"
+                app:layout_constraintBottom_toTopOf="@id/medication_intake_time_5">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/medication_intake_timestamp_4_textfield"
+                    android:layout_width="0dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/medication_remove_timestamp_4"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:hint="@string/intake_time"
+                    style="@style/TextField">
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/medication_intake_timestamp_4_input"
+                        android:focusable="false"
+                        android:clickable="false"
+                        style="@style/EditText"/>
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <ImageView
+                    android:id="@+id/medication_remove_timestamp_4"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintDimensionRatio="1:1"
+                    android:layout_marginEnd="@dimen/margin_16dp"
+                    android:src="@drawable/icon_delete"
+                    android:contentDescription="@string/placeholder_icon"
+                    app:tint="@color/blue_1"
+                    app:layout_constraintStart_toEndOf="@id/medication_intake_timestamp_4_textfield"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/medication_intake_time_5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/medication_intake_time_4"
+                app:layout_constraintBottom_toTopOf="@id/medication_add_intake_time">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/medication_intake_timestamp_5_textfield"
+                    android:layout_width="0dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/medication_remove_timestamp_5"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:hint="@string/intake_time"
+                    style="@style/TextField">
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/medication_intake_timestamp_5_input"
+                        android:focusable="false"
+                        android:clickable="false"
+                        style="@style/EditText"/>
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <ImageView
+                    android:id="@+id/medication_remove_timestamp_5"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintDimensionRatio="1:1"
+                    android:layout_marginEnd="@dimen/margin_16dp"
+                    android:src="@drawable/icon_delete"
+                    android:contentDescription="@string/placeholder_icon"
+                    app:tint="@color/blue_1"
+                    app:layout_constraintStart_toEndOf="@id/medication_intake_timestamp_5_textfield"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <TextView
+                android:id="@+id/medication_add_intake_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/margin_16dp"
+                android:layout_marginBottom="@dimen/margin_16dp"
+                android:text="@string/add_intake_time"
+                android:textColor="@color/blue_1"
+                android:textSize="@dimen/text_size_18sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/medication_intake_time_5"
+                app:layout_constraintBottom_toTopOf="@id/medication_intake_interval" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/medication_intake_interval"
+                android:layout_width="0dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/medication_add_intake_time"
+                app:layout_constraintBottom_toTopOf="@id/medication_save"
+                android:hint="@string/interval"
+                style="@style/TextField">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/medication_intake_interval_input"
+                    android:focusable="false"
+                    android:clickable="false"
+                    style="@style/EditText"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <Button
+                android:id="@+id/medication_save"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/medication_intake_interval"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_marginTop="@dimen/margin_64dp"
+                android:text="@string/save"
+                app:icon="@drawable/icon_add_alarm"
+                app:iconGravity="textStart"
+                style="@style/Button" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

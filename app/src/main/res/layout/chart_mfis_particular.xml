@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/chart_mfis_particular"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/mfis_detailed_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_8dp"
+        android:text="@string/fatigue_particular"
+        android:textColor="@color/black"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:drawableEndCompat="@drawable/icon_info"
+        android:drawablePadding="@dimen/margin_4dp"
+        style="@style/Subtitle" />
+
+    <com.github.mikephil.charting.charts.LineChart
+        android:id="@+id/mfis_line_chart_particular"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/line_chart_height"
+        android:minHeight="@dimen/line_chart_height"
+        android:layout_marginBottom="@dimen/margin_16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/mfis_detailed_title" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/medical_query_mfis_labels"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_8dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/mfis_line_chart_particular"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <TextView
+            android:id="@+id/mfis_psychosocial_label"
+            android:text="@string/psychosocial"
+            style="@style/MfisLabel"
+            android:backgroundTint="@color/violett_1"
+            android:background="@drawable/selection_item_blue"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/mfis_motoric_label"
+            android:text="@string/motoric"
+            style="@style/MfisLabel"
+            android:backgroundTint="@color/petrol_1"
+            android:background="@drawable/selection_item_blue"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toEndOf="@id/mfis_psychosocial_label" />
+
+        <TextView
+            android:id="@+id/mfis_cognitive_label"
+            android:text="@string/cognitive"
+            style="@style/MfisLabel"
+            android:backgroundTint="@color/orange_1"
+            android:background="@drawable/selection_item_blue"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toEndOf="@id/mfis_motoric_label" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

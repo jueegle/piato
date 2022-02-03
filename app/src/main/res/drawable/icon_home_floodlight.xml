@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android" >
+    <item
+        android:drawable="@drawable/ic_home_floodlight"
+        android:width="@dimen/horizontal_view_card_icon_size"
+        android:height="@dimen/horizontal_view_card_icon_size" />
+</layer-list >

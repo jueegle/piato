@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/home_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ScrollView
+        android:id="@+id/knowledge_topic_list_scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/navigation_back"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:text="@string/back"
+                app:drawableStartCompat="@drawable/icon_baseline_arrow_back"
+                app:drawableTint="@color/blue_1"
+                style="@style/ButtonBack" />
+
+            <TextView
+                android:id="@+id/knowledge_title"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/navigation_back"
+                android:text="@string/knowledge"
+                app:drawableTint="@color/blue_1"
+                app:drawableEndCompat="@drawable/icon_info"
+                style="@style/HomeTitle" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/conLay_symptom_articles"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/knowledge_first_item_height"
+                android:layout_marginStart="@dimen/margin_16dp"
+                android:layout_marginEnd="@dimen/margin_16dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/knowledge_title"
+                app:layout_constraintBottom_toTopOf="@id/knowledge_topic_list"
+                style="@style/ImageCard">
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/knowledge_topic_symptom_articles"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:adjustViewBounds="true"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/knowledge_you_and_your_ms"
+                    app:layout_constraintWidth_percent=".35"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:shapeAppearanceOverlay="@style/ShapeAppearance.ImageCardKnowledgeList" />
+
+                <TextView
+                    android:id="@+id/knowledge_topic_item_title"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/margin_8dp"
+                    android:text="@string/you_and_your_ms"
+                    android:gravity="center_vertical"
+                    android:textColor="@color/blue_1"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/knowledge_topic_symptom_articles"
+                    app:layout_constraintTop_toTopOf="parent"
+                    style="@style/Subtitle" />
+
+                <TextView
+                    android:id="@+id/knowledge_topic_item_text"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/margin_8dp"
+                    android:layout_marginBottom="@dimen/margin_32dp"
+                    android:text="@string/you_and_your_ms_text"
+                    android:textSize="@dimen/text_size_14sp"
+                    android:textColor="@color/black"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/knowledge_topic_symptom_articles"
+                    app:layout_constraintTop_toBottomOf="@id/knowledge_topic_item_title" />
+
+                <TextView
+                    android:id="@+id/knowledge_topic_item_sum"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_margin="@dimen/margin_8dp"
+                    android:text="@string/no_articles"
+                    android:textColor="@color/blue_2"
+                    android:gravity="end|bottom"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/knowledge_topic_list"
+                android:layout_marginTop="@dimen/margin_8dp"
+                android:layout_marginStart="@dimen/margin_8dp"
+                android:layout_marginEnd="@dimen/margin_8dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/conLay_symptom_articles"
+                android:orientation="vertical"
+                app:layoutManager="LinearLayoutManager"
+                tools:listitem="@layout/knowledge_topic_card" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

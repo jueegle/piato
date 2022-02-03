@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="elevation_4dp">8dp</dimen>
+    <dimen name="elevation_5dp">10dp</dimen>
+    <dimen name="elevation_6dp">12dp</dimen>
+    <dimen name="elevation_8dp">16dp</dimen>
+
+    <dimen name="padding_page_bottom_96dp">192dp</dimen>
+    <dimen name="padding_report_relapse_vertical">0dp</dimen>
+    <dimen name="padding_report_relapse_horizontal">32dp</dimen>
+
+    <dimen name="margin_4dp">8dp</dimen>
+    <dimen name="margin_8dp">16dp</dimen>
+    <dimen name="margin_12dp">24dp</dimen>
+    <dimen name="margin_16dp">32dp</dimen>
+    <dimen name="margin_20dp">40dp</dimen>
+    <dimen name="margin_24dp">48dp</dimen>
+    <dimen name="margin_32dp">64dp</dimen>
+    <dimen name="margin_36dp">72dp</dimen>
+    <dimen name="margin_48dp">96dp</dimen>
+    <dimen name="margin_64dp">128dp</dimen>
+
+    <dimen name="text_size_48sp">96sp</dimen>
+    <dimen name="text_size_40sp">80sp</dimen>
+    <dimen name="text_size_30sp">60sp</dimen>
+    <dimen name="text_size_28sp">56sp</dimen>
+    <dimen name="text_size_24sp">48sp</dimen>
+    <dimen name="text_size_22sp">44sp</dimen>
+    <dimen name="text_size_20sp">40sp</dimen>
+    <dimen name="text_size_18sp">36sp</dimen>
+    <dimen name="text_size_16sp">32sp</dimen>
+    <dimen name="text_size_14sp">28sp</dimen>
+    <dimen name="text_size_12sp">24sp</dimen>
+
+    <dimen name="menu_text_size_24sp">27sp</dimen>
+    <dimen name="menu_text_size_20sp">22sp</dimen>
+    <dimen name="menu_text_size_14sp">16sp</dimen>
+    <dimen name="menu_text_size_16sp">18sp</dimen>
+    <dimen name="menu_icon_size_24dp">36dp</dimen>
+    <dimen name="menu_icon_size_16dp">24dp</dimen>
+    <dimen name="menu_icon_size_4dp">6dp</dimen>
+    <dimen name="menu_icon_padding_24dp">30dp</dimen>
+    <dimen name="menu_icon_padding_28dp">36dp</dimen>
+
+    <dimen name="icon_size">48dp</dimen>
+    <dimen name="large_icon_size">72dp</dimen>
+    <dimen name="icon_padding_2dp">4dp</dimen>
+    <dimen name="icon_size_48dp">96dp</dimen>
+    <dimen name="icon_size_40dp">80dp</dimen>
+    <dimen name="icon_size_30dp">60dp</dimen>
+
+    <dimen name="button_height">112dp</dimen>
+    <dimen name="button_corner_radius">56dp</dimen>
+
+    <dimen name="card_corner_radius">32dp</dimen>
+    <dimen name="card_smiley_corner_radius">64dp</dimen>
+    <dimen name="progress_time_selection_item_radius">128dp</dimen>
+    <dimen name="progress_time_selection_radius">64dp</dimen>
+
+    <dimen name="horizontal_view_card_width">400dp</dimen>
+    <dimen name="horizontal_view_card_height">440dp</dimen>
+    <dimen name="horizontal_view_card_icon_size">240dp</dimen>
+
+    <dimen name="slider_track_height">12dp</dimen>
+    <dimen name="slider_background_height">72dp</dimen>
+
+    <dimen name="backdrop_margin_top">192dp</dimen>
+    <dimen name="switch_height">136dp</dimen>
+
+    <dimen name="line_chart_height">400dp</dimen>
+    <dimen name="smiley_card_padding">192dp</dimen>
+
+    <dimen name="knowledge_list_item_height">200dp</dimen>
+    <dimen name="knowledge_first_item_height">300dp</dimen>
+    <dimen name="progress_time_scroller_height">200dp</dimen>
+    <dimen name="horizontal_single_select_tabs_height">88dp</dimen>
+    <dimen name="progress_time_scroller_hack">20dp</dimen>
+    <dimen name="no_img_card_item_height">160dp</dimen>
+    <dimen name="reminder_card_item_height">120dp</dimen>
+    <dimen name="my_hand_selection_hack">44dp</dimen>
+    <dimen name="my_hand_intro_selection_hack">108dp</dimen>
+
+    <dimen name="progress_no_data_height">128dp</dimen>
+    <dimen name="symptom_list_item_height">96dp</dimen>
+    <dimen name="home_chip_min_height">64dp</dimen>
+
+    <dimen name="line_progress_indicator_trackThickness">20dp</dimen>
+    <dimen name="line_progress_indicator_trackCornerRadius">40dp</dimen>
+
+    <dimen name="emendia_home_list_item_height">280dp</dimen>
+
+    <dimen name="slider_eq5d_thumb_radius">40dp</dimen>
+</resources>

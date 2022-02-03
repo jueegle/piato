@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mfis_result_scrollview"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="@dimen/padding_page_bottom_96dp">
+
+        <TextView
+            android:id="@+id/navigation_back"
+            style="@style/ButtonBack"
+            android:text="@string/back"
+            app:drawableStartCompat="@drawable/icon_baseline_arrow_back"
+            app:drawableTint="@color/blue_1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/medical_query_desc_title"
+            style="@style/HomeTitle"
+            android:text="@string/mfis_overview"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/navigation_back" />
+
+        <TextView
+            android:id="@+id/mfis_text_1"
+            style="@style/EDSSResultsQuestionCard"
+            android:text="@string/medical_query_overview_check_your_data"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/medical_query_desc_title" />
+
+        <TextView
+            android:id="@+id/mfis_text_2"
+            style="@style/EDSSResultsQuestionCard"
+            android:text="@string/mfis_question_text_1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/mfis_text_1" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/mfis_answer_recyclerView"
+            android:layout_marginStart="@dimen/margin_8dp"
+            android:layout_marginEnd="@dimen/margin_8dp"
+            android:layout_marginTop="@dimen/margin_16dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/mfis_text_2"
+            android:orientation="vertical"
+            app:layoutManager="LinearLayoutManager"
+            tools:listitem="@layout/mfis_result_card" />
+
+        <Button
+            android:id="@+id/mfis_finish_button"
+            style="@style/Button"
+            android:layout_marginTop="@dimen/margin_32dp"
+            android:text="@string/finished"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/mfis_answer_recyclerView" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>

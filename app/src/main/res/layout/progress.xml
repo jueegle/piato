@@ -1,0 +1,861 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/home_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/init_progress_cover"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingBottom="70dp"
+        android:elevation="10dp"
+        android:background="@color/transparent_dark_shadow"
+        android:visibility="gone">
+
+        <ProgressBar
+            style="?android:attr/progressBarStyle"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            app:layout_constraintVertical_bias=".4"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/scrollView_progress"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="@dimen/margin_64dp">
+
+            <TextView
+                android:id="@+id/navigation_back"
+                style="@style/ButtonBack"
+                android:text="@string/back"
+                app:drawableStartCompat="@drawable/icon_baseline_arrow_back"
+                app:drawableTint="@color/blue_1"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toTopOf="@id/title_progress" />
+
+            <TextView
+                android:id="@+id/title_progress"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/navigation_back"
+                app:layout_constraintBottom_toTopOf="@id/time_selection"
+                android:text="@string/progress"
+                android:textSize="@dimen/text_size_30sp"
+                app:drawableEndCompat="@drawable/icon_info"
+                style="@style/HomeTitle" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/time_selection"
+                app:layout_constraintTop_toBottomOf="@id/title_progress"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginStart="@dimen/margin_16dp"
+                android:layout_marginEnd="@dimen/margin_16dp"
+                android:layout_marginTop="@dimen/margin_8dp"
+                android:layout_marginBottom="@dimen/margin_8dp"
+                android:layout_height="@dimen/horizontal_single_select_tabs_height"
+                android:layout_width="match_parent"
+                android:elevation="@dimen/elevation_6dp"
+                android:background="@drawable/selection_background"
+                android:padding="3dp">
+
+                <TextView
+                    android:id="@+id/time_selection_week"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:text="@string/week"
+                    android:textColor="@color/white"
+                    android:gravity="center"
+                    android:textStyle="bold"
+                    android:textSize="@dimen/text_size_20sp"
+                    android:background="@drawable/selection_item_blue"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/time_selection_month"/>
+
+                <TextView
+                    android:id="@+id/time_selection_month"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:text="@string/month"
+                    android:textColor="@color/blue_1"
+                    android:gravity="center"
+                    android:textStyle="bold"
+                    android:textSize="@dimen/text_size_20sp"
+                    android:background="@drawable/selection_item_white"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/time_selection_week"
+                    app:layout_constraintEnd_toStartOf="@id/time_selection_year"/>
+
+                <TextView
+                    android:id="@+id/time_selection_year"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:text="@string/year"
+                    android:textColor="@color/blue_1"
+                    android:gravity="center"
+                    android:textStyle="bold"
+                    android:textSize="@dimen/text_size_20sp"
+                    android:background="@drawable/selection_item_white"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/time_selection_month"
+                    app:layout_constraintEnd_toEndOf="parent"/>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/time_scroller"
+                android:layout_height="@dimen/progress_time_scroller_height"
+                android:layout_width="match_parent"
+                app:layout_constraintTop_toTopOf="@id/time_selection"
+                app:layout_constraintBottom_toTopOf="@id/diary_how_were_you_today"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="@dimen/progress_time_scroller_hack"
+                style="@style/Card"
+                android:elevation="@dimen/elevation_4dp">
+
+                <ImageView
+                    android:id="@+id/time_selection_back"
+                    android:layout_width="@dimen/large_icon_size"
+                    android:layout_height="@dimen/large_icon_size"
+                    android:padding="4dp"
+                    android:src="@drawable/ic_baseline_arrow_back_ios_new_24"
+                    android:background="@drawable/navigation_button_background"
+                    android:contentDescription="@string/back"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias=".0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:layout_marginStart="@dimen/margin_16dp"
+                    android:layout_marginTop="@dimen/horizontal_single_select_tabs_height"
+                    android:layout_marginBottom="@dimen/progress_time_scroller_hack" />
+
+                <TextView
+                    android:id="@+id/time_text"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:text="@string/placeholder_date"
+                    android:textColor="@color/black"
+                    android:gravity="center"
+                    android:textStyle="bold"
+                    android:textSize="@dimen/text_size_20sp"
+                    android:background="@drawable/selection_item_white"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/time_selection_back"
+                    app:layout_constraintEnd_toStartOf="@id/time_selection_next"
+                    android:layout_marginTop="@dimen/horizontal_single_select_tabs_height"
+                    android:layout_marginBottom="@dimen/progress_time_scroller_hack" />
+
+                <ImageView
+                    android:id="@+id/time_selection_next"
+                    android:layout_width="@dimen/large_icon_size"
+                    android:layout_height="@dimen/large_icon_size"
+                    android:padding="4dp"
+                    android:src="@drawable/ic_baseline_arrow_forward_ios_24"
+                    android:background="@drawable/navigation_button_background"
+                    android:contentDescription="@string/next"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="1"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:layout_marginEnd="@dimen/margin_16dp"
+                    android:layout_marginTop="@dimen/horizontal_single_select_tabs_height"
+                    android:layout_marginBottom="@dimen/progress_time_scroller_hack" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <TextView
+                android:id="@+id/diary_how_were_you_today"
+                style="@style/HomeTitle"
+                android:text="@string/diary_how_were_you_today"
+                app:drawableEndCompat="@drawable/icon_info"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/time_scroller" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/card_feeling_chart"
+                style="@style/Card"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/margin_8dp"
+                app:layout_constraintTop_toBottomOf="@+id/diary_how_were_you_today"
+                app:layout_constraintBottom_toTopOf="@id/symptoms_title">
+
+                <include
+                    android:id="@+id/chart_feeling"
+                    layout="@layout/chart_feeling"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <TextView
+                    android:id="@+id/feeling_no_data"
+                    android:visibility="gone"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/icon_size_48dp"
+                    android:text="@string/no_data_for_this_timerange"
+                    android:textSize="@dimen/text_size_16sp"
+                    android:textColor="@color/gray_1"
+                    android:gravity="center"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <TextView
+                android:id="@+id/symptoms_title"
+                style="@style/HomeTitle"
+                android:text="@string/symptoms"
+                app:drawableEndCompat="@drawable/icon_info"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/card_feeling_chart"
+                app:layout_constraintBottom_toTopOf="@+id/card_symptoms"/>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/card_symptoms"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/symptoms_title"
+                app:layout_constraintBottom_toTopOf="@id/other_symptoms_title"
+                tools:layout_editor_absoluteX="16dp">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/symptom_list"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:orientation="vertical"
+                    app:layoutManager="LinearLayoutManager"
+                    tools:listitem="@layout/symptom_recycler_view_item" />
+
+                <TextView
+                    android:id="@+id/symptom_no_data"
+                    style="@style/NoDataForThisTimerange"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <TextView
+                android:id="@+id/other_symptoms_title"
+                style="@style/HomeTitle"
+                android:layout_marginStart="16dp"
+                android:text="@string/other_symptoms"
+                app:drawableEndCompat="@drawable/icon_info"
+                app:layout_constraintBottom_toTopOf="@+id/card_other_symptoms"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/card_symptoms" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/card_other_symptoms"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/other_symptoms_title"
+                app:layout_constraintBottom_toTopOf="@id/relapse_title"
+                tools:layout_editor_absoluteX="16dp">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/other_symptom_list"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:orientation="vertical"
+                    app:layoutManager="LinearLayoutManager"
+                    tools:listitem="@layout/other_symptom_recycler_view_item" />
+
+                <TextView
+                    android:id="@+id/other_symptom_no_data"
+                    style="@style/NoDataForThisTimerange"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <TextView
+                android:id="@+id/relapse_title"
+                style="@style/HomeTitle"
+                android:text="@string/relapses"
+                app:drawableEndCompat="@drawable/icon_info"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/card_other_symptoms"
+                app:layout_constraintBottom_toTopOf="@+id/card_relapses"/>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/card_relapses"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/relapse_title"
+                app:layout_constraintBottom_toTopOf="@id/medical_queries_title">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/relapse_list"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:orientation="vertical"
+                    app:layoutManager="LinearLayoutManager"
+                    tools:listitem="@layout/relapse_recycler_view_item" />
+
+                <TextView
+                    android:id="@+id/relapse_no_data"
+                    style="@style/NoDataForThisTimerange"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <TextView
+                android:id="@+id/medical_queries_title"
+                style="@style/HomeTitle"
+                android:text="@string/medical_queries"
+                app:drawableEndCompat="@drawable/icon_info"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/card_relapses"
+                app:layout_constraintBottom_toTopOf="@id/medical_queries_conLay" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/medical_queries_conLay"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/medical_queries_title"
+                app:layout_constraintBottom_toTopOf="@id/floodlight_title">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/medical_query_edss"
+                    style="@style/Card"
+                    android:visibility="gone"
+                    android:layout_marginTop="@dimen/margin_4dp"
+                    android:layout_marginBottom="@dimen/margin_4dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toTopOf="@id/medical_query_mfis">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/edss_upper_part"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/symptom_list_item_height"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <TextView
+                            android:id="@+id/edss_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="0dp"
+                            android:layout_marginStart="@dimen/margin_16dp"
+                            android:text="@string/edss"
+                            android:gravity="center_vertical"
+                            android:textColor="@color/blue_1"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            style="@style/Subtitle" />
+
+                        <ImageView
+                            android:id="@+id/edss_arrow"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="@dimen/margin_16dp"
+                            android:layout_gravity="center"
+                            android:contentDescription="@string/placeholder_icon"
+                            android:src="@drawable/icon_baseline_keyboard_arrow_right"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:tint="@color/blue_1" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <include
+                        android:id="@+id/medical_query_chart_edss"
+                        layout="@layout/chart_edss"
+                        android:visibility="gone"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/margin_8dp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/edss_upper_part"
+                        app:layout_constraintBottom_toBottomOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/medical_query_mfis"
+                    android:visibility="gone"
+                    style="@style/Card"
+                    android:layout_marginTop="@dimen/margin_4dp"
+                    android:layout_marginBottom="@dimen/margin_4dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/medical_query_edss"
+                    app:layout_constraintBottom_toTopOf="@id/medical_query_livability">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/mfis_upper_part"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/symptom_list_item_height"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <TextView
+                            android:id="@+id/mfis_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="0dp"
+                            android:layout_marginStart="@dimen/margin_16dp"
+                            android:text="@string/mfis"
+                            android:gravity="center_vertical"
+                            android:textColor="@color/blue_1"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            style="@style/Subtitle" />
+
+                        <ImageView
+                            android:id="@+id/mfis_arrow"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="@dimen/margin_16dp"
+                            android:layout_gravity="center"
+                            android:contentDescription="@string/placeholder_icon"
+                            android:src="@drawable/icon_baseline_keyboard_arrow_right"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:tint="@color/blue_1" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <include
+                        android:id="@+id/medical_query_charts_mfis_overall"
+                        android:visibility="gone"
+                        layout="@layout/chart_mfis_overall"
+                        android:layout_marginStart="@dimen/margin_8dp"
+                        android:layout_marginEnd="@dimen/margin_8dp"
+                        android:layout_marginBottom="@dimen/margin_16dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/mfis_upper_part"
+                        app:layout_constraintBottom_toTopOf="@id/medical_query_charts_mfis_particular"/>
+
+                    <include
+                        android:id="@+id/medical_query_charts_mfis_particular"
+                        android:visibility="gone"
+                        layout="@layout/chart_mfis_particular"
+                        android:layout_marginStart="@dimen/margin_8dp"
+                        android:layout_marginEnd="@dimen/margin_8dp"
+                        android:layout_marginBottom="@dimen/margin_16dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/medical_query_charts_mfis_overall"
+                        app:layout_constraintBottom_toBottomOf="parent"/>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/medical_query_livability"
+                    style="@style/Card"
+                    android:visibility="gone"
+                    android:layout_marginTop="@dimen/margin_4dp"
+                    android:layout_marginBottom="@dimen/margin_4dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/medical_query_mfis"
+                    app:layout_constraintBottom_toBottomOf="parent">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/livability_upper_part"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/symptom_list_item_height"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <TextView
+                            android:id="@+id/livability_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="0dp"
+                            android:layout_marginStart="@dimen/margin_16dp"
+                            android:text="@string/livability"
+                            android:gravity="center_vertical"
+                            android:textColor="@color/blue_1"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            style="@style/Subtitle" />
+
+                        <ImageView
+                            android:id="@+id/livability_arrow"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="@dimen/margin_16dp"
+                            android:layout_gravity="center"
+                            android:contentDescription="@string/placeholder_icon"
+                            android:src="@drawable/icon_baseline_keyboard_arrow_right"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:tint="@color/blue_1" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <include
+                        android:id="@+id/medical_query_chart_livability"
+                        layout="@layout/chart_livability"
+                        android:visibility="gone"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/margin_8dp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/livability_upper_part"
+                        app:layout_constraintBottom_toBottomOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <TextView
+                    android:id="@+id/medical_queries_no_data"
+                    style="@style/NoDataForThisTimerange"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <TextView
+                android:id="@+id/floodlight_title"
+                style="@style/HomeTitle"
+                android:text="@string/floodlight_tests"
+                app:drawableEndCompat="@drawable/icon_info"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/medical_queries_conLay"
+                app:layout_constraintBottom_toTopOf="@id/floodlight_results_conLay" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/floodlight_results_conLay"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/floodlight_title"
+                app:layout_constraintBottom_toBottomOf="parent">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/floodlight_hand_function"
+                    style="@style/Card"
+                    android:visibility="gone"
+                    android:layout_marginTop="@dimen/margin_4dp"
+                    android:layout_marginBottom="@dimen/margin_4dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toTopOf="@id/floodlight_symbols">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/floodlight_hand_function_upper_part"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/symptom_list_item_height"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <TextView
+                            android:id="@+id/floodlight_hand_function_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="0dp"
+                            android:layout_marginStart="@dimen/margin_16dp"
+                            android:text="@string/hand_function"
+                            android:gravity="center_vertical"
+                            android:textColor="@color/blue_1"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            style="@style/Subtitle" />
+
+                        <ImageView
+                            android:id="@+id/floodlight_hand_function_arrow"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="@dimen/margin_16dp"
+                            android:layout_gravity="center"
+                            android:contentDescription="@string/placeholder_icon"
+                            android:src="@drawable/icon_baseline_keyboard_arrow_right"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:tint="@color/blue_1" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/hand_selection"
+                        android:visibility="gone"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/floodlight_hand_function_upper_part"
+                        android:layout_marginStart="@dimen/margin_16dp"
+                        android:layout_marginEnd="@dimen/margin_16dp"
+                        android:layout_marginBottom="@dimen/margin_8dp"
+                        android:layout_height="@dimen/horizontal_single_select_tabs_height"
+                        android:layout_width="match_parent"
+                        android:elevation="@dimen/elevation_6dp"
+                        android:background="@drawable/selection_background"
+                        android:padding="3dp">
+
+                        <TextView
+                            android:id="@+id/left_hand"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:text="@string/left_hand"
+                            android:textColor="@color/white"
+                            android:gravity="center"
+                            android:textStyle="bold"
+                            android:textSize="@dimen/text_size_20sp"
+                            android:background="@drawable/selection_item_blue"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toStartOf="@id/right_hand"/>
+
+                        <TextView
+                            android:id="@+id/right_hand"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:text="@string/right_hand"
+                            android:textColor="@color/blue_1"
+                            android:gravity="center"
+                            android:textStyle="bold"
+                            android:textSize="@dimen/text_size_20sp"
+                            android:background="@drawable/selection_item_white"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toEndOf="@id/left_hand"
+                            app:layout_constraintEnd_toEndOf="parent"/>
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <include
+                        android:id="@+id/floodlight_chart_draw_shape_right"
+                        layout="@layout/chart_draw_shape_right"
+                        android:visibility="gone"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/margin_8dp"
+                        android:layout_marginTop="@dimen/margin_8dp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/hand_selection" />
+
+                    <include
+                        android:id="@+id/floodlight_chart_draw_shape_left"
+                        layout="@layout/chart_draw_shape_left"
+                        android:visibility="gone"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/margin_8dp"
+                        android:layout_marginTop="@dimen/margin_8dp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/hand_selection" />
+
+                    <include
+                        android:id="@+id/floodlight_chart_pinching_right"
+                        layout="@layout/chart_pinching_right"
+                        android:visibility="gone"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/margin_8dp"
+                        android:layout_marginTop="@dimen/margin_8dp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/floodlight_chart_draw_shape_right" />
+
+                    <include
+                        android:id="@+id/floodlight_chart_pinching_left"
+                        layout="@layout/chart_pinching_left"
+                        android:visibility="gone"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/margin_8dp"
+                        android:layout_marginTop="@dimen/margin_8dp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/floodlight_chart_draw_shape_left" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/floodlight_symbols"
+                    style="@style/Card"
+                    android:visibility="gone"
+                    android:layout_marginTop="@dimen/margin_4dp"
+                    android:layout_marginBottom="@dimen/margin_4dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/floodlight_hand_function"
+                    app:layout_constraintBottom_toTopOf="@id/floodlight_uturn">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/floodlight_symbols_upper_part"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/symptom_list_item_height"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <TextView
+                            android:id="@+id/floodlight_symbols_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="0dp"
+                            android:layout_marginStart="@dimen/margin_16dp"
+                            android:text="@string/cognition"
+                            android:gravity="center_vertical"
+                            android:textColor="@color/blue_1"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            style="@style/Subtitle" />
+
+                        <ImageView
+                            android:id="@+id/floodlight_symbols_arrow"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="@dimen/margin_16dp"
+                            android:layout_gravity="center"
+                            android:contentDescription="@string/placeholder_icon"
+                            android:src="@drawable/icon_baseline_keyboard_arrow_right"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:tint="@color/blue_1" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <include
+                        android:id="@+id/floodlight_chart_symbols"
+                        layout="@layout/chart_symbols"
+                        android:visibility="gone"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/margin_8dp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/floodlight_symbols_upper_part"
+                        app:layout_constraintBottom_toBottomOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/floodlight_uturn"
+                    style="@style/Card"
+                    android:visibility="gone"
+                    android:layout_marginTop="@dimen/margin_4dp"
+                    android:layout_marginBottom="@dimen/margin_4dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/floodlight_symbols"
+                    app:layout_constraintBottom_toBottomOf="parent">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/floodlight_uturn_upper_part"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/symptom_list_item_height"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <TextView
+                            android:id="@+id/floodlight_uturn_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="0dp"
+                            android:layout_marginStart="@dimen/margin_16dp"
+                            android:text="@string/walk"
+                            android:gravity="center_vertical"
+                            android:textColor="@color/blue_1"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            style="@style/Subtitle" />
+
+                        <ImageView
+                            android:id="@+id/floodlight_uturn_arrow"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="@dimen/margin_16dp"
+                            android:layout_gravity="center"
+                            android:contentDescription="@string/placeholder_icon"
+                            android:src="@drawable/icon_baseline_keyboard_arrow_right"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:tint="@color/blue_1" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <include
+                        android:id="@+id/floodlight_chart_uturn"
+                        layout="@layout/chart_uturn"
+                        android:visibility="gone"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/margin_8dp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/floodlight_uturn_upper_part"
+                        app:layout_constraintBottom_toBottomOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <TextView
+                    android:id="@+id/floodlight_no_data"
+                    style="@style/NoDataForThisTimerange"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"/>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

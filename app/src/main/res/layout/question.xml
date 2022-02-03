@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/home_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/scrollView_question"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingBottom="@dimen/padding_page_bottom_96dp">
+
+            <TextView
+                android:id="@+id/questionnaire_cancel"
+                style="@style/ButtonBack"
+                android:text="@string/cancel"
+                app:drawableStartCompat="@drawable/ic_baseline_close_24"
+                app:drawableTint="@color/blue_1"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/questionnaire_title"
+                style="@style/HomeTitle"
+                android:text="@string/questionnaires"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/questionnaire_cancel" />
+
+            <com.google.android.material.progressindicator.LinearProgressIndicator
+                android:id="@+id/questionnaire_progress_indicator"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_16dp"
+                android:layout_marginEnd="@dimen/margin_16dp"
+                android:layout_marginTop="@dimen/margin_16dp"
+                app:trackThickness="@dimen/line_progress_indicator_trackThickness"
+                app:trackCornerRadius="@dimen/line_progress_indicator_trackCornerRadius"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/questionnaire_title" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/question_card"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/margin_16dp"
+                android:layout_marginStart="@dimen/margin_16dp"
+                android:layout_marginEnd="@dimen/margin_16dp"
+                android:layout_marginTop="@dimen/margin_16dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/questionnaire_progress_indicator"
+                style="@style/ImageCard">
+
+                <TextView
+                    android:id="@+id/question_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:text="@string/placeholder_short_text"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    android:textSize="@dimen/text_size_20sp"/>
+
+                <TextView
+                    android:id="@+id/question_description"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/margin_8dp"
+                    android:layout_marginTop="@dimen/margin_8dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/question_text"
+                    app:layout_constraintBottom_toTopOf="@id/question_body"
+                    android:text="@string/placeholder_very_short_text"
+                    android:textColor="@color/black"
+                    android:textStyle="italic"
+                    android:textSize="@dimen/text_size_20sp"/>
+
+                <LinearLayout
+                    android:id="@+id/question_body"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/question_description"
+                    app:layout_constraintBottom_toBottomOf="parent">
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/question_type_numeric"
+                        android:visibility="gone"
+                        android:hint="@string/enter_answer"
+                        android:layout_marginStart="0dp"
+                        android:layout_marginEnd="0dp"
+                        style="@style/TextField">
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/question_type_numeric_input"
+                            android:inputType="number"
+                            android:focusable="false"
+                            style="@style/EditText" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/question_type_text"
+                        android:visibility="gone"
+                        android:hint="@string/enter_answer"
+                        android:layout_marginStart="0dp"
+                        android:layout_marginEnd="0dp"
+                        style="@style/TextField">
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/question_type_text_input"
+                            android:inputType="textMultiLine"
+                            android:focusable="false"
+                            style="@style/EditText" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/question_type_date"
+                        android:visibility="gone"
+                        android:hint="@string/enter_answer"
+                        android:layout_marginStart="0dp"
+                        android:layout_marginEnd="0dp"
+                        style="@style/TextField">
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/question_type_date_input"
+                            android:focusable="false"
+                            style="@style/EditText" />
+                    </com.google.android.material.textfield.TextInputLayout>
+                </LinearLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/navigation_back"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_16dp"
+                android:layout_marginTop="@dimen/margin_24dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/question_card"
+                app:layout_constraintBottom_toBottomOf="parent">
+
+                <ImageButton
+                    android:id="@+id/navigation_back_icon"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:background="@drawable/button_background"
+                    android:contentDescription="@string/cancel"
+                    android:clickable="false"
+                    android:src="@drawable/icon_baseline_arrow_back" />
+
+                <TextView
+                    android:id="@+id/navigation_back_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/navigation_back_icon"
+                    android:paddingStart="@dimen/margin_4dp"
+                    android:paddingEnd="0dp"
+                    android:text="@string/back"
+                    android:textSize="@dimen/text_size_20sp"
+                    android:textColor="@color/blue_1"
+                    android:textStyle="bold"/>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/navigation_next"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/margin_16dp"
+                android:layout_marginTop="@dimen/margin_24dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/question_card"
+                app:layout_constraintBottom_toBottomOf="parent">
+
+                <TextView
+                    android:id="@+id/navigation_next_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/navigation_next_icon"
+                    android:paddingStart="0dp"
+                    android:paddingEnd="@dimen/margin_4dp"
+                    android:text="@string/next"
+                    android:textSize="@dimen/text_size_20sp"
+                    android:textColor="@color/blue_1"
+                    android:textStyle="bold"/>
+
+                <ImageButton
+                    android:id="@+id/navigation_next_icon"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:background="@drawable/button_background"
+                    android:contentDescription="@string/next"
+                    android:clickable="false"
+                    android:src="@drawable/ic_baseline_arrow_forward_24" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/home_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/navigation_back"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:text="@string/back"
+                app:drawableStartCompat="@drawable/icon_baseline_arrow_back"
+                app:drawableTint="@color/blue_1"
+                style="@style/ButtonBack" />
+
+            <TextView
+                android:id="@+id/medical_query_title"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/navigation_back"
+                android:text="@string/medical_query"
+                app:drawableTint="@color/blue_1"
+                app:drawableEndCompat="@drawable/icon_info"
+                style="@style/HomeTitle" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/medical_query_conLay_edss"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/knowledge_list_item_height"
+                android:layout_margin="@dimen/margin_16dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/medical_query_title"
+                app:layout_constraintBottom_toTopOf="@id/medical_query_conLay_mfis"
+                style="@style/ImageCard">
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/medical_query_image_edss"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:adjustViewBounds="true"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/medical_query_1"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:shapeAppearanceOverlay="@style/ShapeAppearance.ImageCardKnowledgeList" />
+
+                <TextView
+                    android:id="@+id/medical_query_title_edss"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_margin="@dimen/margin_8dp"
+                    android:text="@string/edss"
+                    android:gravity="center_vertical"
+                    android:textColor="@color/blue_1"
+                    app:layout_constraintStart_toEndOf="@id/medical_query_image_edss"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    style="@style/Subtitle" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/medical_query_conLay_mfis"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/knowledge_list_item_height"
+                android:layout_margin="@dimen/margin_16dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/medical_query_conLay_edss"
+                style="@style/ImageCard">
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/medical_query_image_mfis"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:adjustViewBounds="true"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/medical_query_2"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:shapeAppearanceOverlay="@style/ShapeAppearance.ImageCardKnowledgeList" />
+
+                <TextView
+                    android:id="@+id/medical_query_title_mfis"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_margin="@dimen/margin_8dp"
+                    android:text="@string/mfis"
+                    android:gravity="center_vertical"
+                    android:textColor="@color/blue_1"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/medical_query_image_mfis"
+                    app:layout_constraintTop_toTopOf="parent"
+                    style="@style/Subtitle" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/medical_query_conLay_livability"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/knowledge_list_item_height"
+                android:layout_margin="@dimen/margin_16dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/medical_query_conLay_mfis"
+                app:layout_constraintBottom_toTopOf="@id/medical_query_conLay_results"
+                style="@style/ImageCard">
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/medical_query_image_livability"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:adjustViewBounds="true"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/medical_query_3"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:shapeAppearanceOverlay="@style/ShapeAppearance.ImageCardKnowledgeList" />
+
+                <TextView
+                    android:id="@+id/medical_query_title_livability"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_margin="@dimen/margin_8dp"
+                    android:text="@string/livability"
+                    android:gravity="center_vertical"
+                    android:textColor="@color/blue_1"
+                    app:layout_constraintStart_toEndOf="@id/medical_query_image_livability"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    style="@style/Subtitle" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/medical_query_conLay_results"
+                style="@style/ImageCard"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/margin_64dp"
+                android:layout_margin="@dimen/margin_16dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/medical_query_conLay_livability"
+                app:layout_constraintBottom_toBottomOf="parent">
+
+                <TextView
+                    android:id="@+id/medical_query_results_text"
+                    style="@style/Subtitle"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="@dimen/margin_16dp"
+                    android:gravity="center_vertical"
+                    android:text="@string/result_medical_query"
+                    android:textColor="@color/blue_1"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/imageView"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/imageView"
+                    android:layout_width="@dimen/icon_size"
+                    android:layout_height="@dimen/icon_size"
+                    android:layout_marginEnd="@dimen/margin_16dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:srcCompat="@drawable/ic_baseline_arrow_forward_24"
+                    app:tint="@color/blue_1"
+                    android:contentDescription="@string/placeholder_icon" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

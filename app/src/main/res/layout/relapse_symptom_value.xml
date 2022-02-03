@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clickable="true"
+    android:focusable="true"
+    android:focusableInTouchMode="true">
+
+    <include
+        android:id="@+id/report_relapse_top_layout_cl"
+        layout="@layout/layout_relapse_top"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/relapse_ll"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@+id/report_relapse_bottom_navigation_button_cl"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/report_relapse_top_layout_cl">
+
+        <TextView
+            android:id="@+id/report_relapse_how_strong_function_disruption_tv"
+            style="@style/ReportRelapseQuestionText"
+            android:layout_width="match_parent"
+            android:text="@string/report_relapse_how_strong_function_disruption"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layout_slider"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/report_relapse_how_strong_function_disruption_tv">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/slider_background"
+                style="@style/SliderBackground"
+                android:layout_marginStart="@dimen/margin_16dp"
+                android:layout_marginEnd="@dimen/margin_16dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <com.google.android.material.slider.Slider
+                    android:id="@+id/relapse_slider"
+                    style="@style/Slider"
+                    android:valueFrom="1"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <Button
+                    android:id="@+id/relapse_button_minus_slider"
+                    style="@style/ButtonPlusMinus"
+                    android:layout_marginStart="44dp"
+                    android:enabled="false"
+                    android:text="@string/minus"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.0" />
+
+                <Button
+                    android:id="@+id/relapse_button_plus_slider"
+                    style="@style/ButtonPlusMinus"
+                    android:backgroundTint="@color/blue_1"
+                    android:text="@string/plus"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <TextView
+                android:id="@+id/slider_header_left"
+                style="@style/SliderHeader"
+                android:text="@string/easy"
+                app:layout_constraintStart_toStartOf="@id/slider_background"
+                app:layout_constraintTop_toBottomOf="@id/slider_background" />
+
+            <TextView
+                android:id="@+id/slider_header_right"
+                style="@style/SliderHeader"
+                android:text="@string/hard"
+                app:layout_constraintEnd_toEndOf="@id/slider_background"
+                app:layout_constraintTop_toBottomOf="@id/slider_background" />
+
+            <TextView
+                android:id="@+id/relapse_symptom_slider_value"
+                style="@style/SliderValue"
+                android:text="@string/number_1"
+                android:background="@drawable/slider_value_petrol_background"
+                android:layout_width="36dp"
+                android:layout_marginStart="205dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="367dp"
+                android:foregroundGravity="clip_horizontal"
+                android:gravity="center"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </LinearLayout>
+
+    <include
+        android:id="@+id/report_relapse_bottom_navigation_button_cl"
+        layout="@layout/layout_bottom_navigation" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

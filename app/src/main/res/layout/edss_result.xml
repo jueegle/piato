@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="@dimen/padding_page_bottom_96dp">
+
+        <TextView
+            android:id="@+id/navigation_back"
+            style="@style/ButtonBack"
+            android:text="@string/back"
+            app:drawableStartCompat="@drawable/icon_baseline_arrow_back"
+            app:drawableTint="@color/blue_1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/medical_query_desc_title"
+            style="@style/HomeTitle"
+            android:text="@string/edss_overview"
+            app:drawableEndCompat="@drawable/icon_info"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/navigation_back" />
+
+        <TextView
+            android:id="@+id/textView1"
+            style="@style/EDSSResultsQuestionCard"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/medical_query_desc_title"
+            app:layout_constraintBottom_toTopOf="@id/edss_q1"
+            android:text="@string/medical_query_overview_check_your_data" />
+
+        <TextView
+            android:id="@+id/edss_q1"
+            style="@style/EDSSResultsQuestionCard"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/textView1"
+            app:layout_constraintBottom_toTopOf="@id/edss_a1"
+            android:text="@string/edss_question_1" />
+
+        <TextView
+            android:id="@+id/edss_a1"
+            style="@style/EDSSResultsAnswerCard"
+            android:text="@string/placeholder_very_short_text"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/edss_q1"
+            app:layout_constraintBottom_toTopOf="@id/edss_q2" />
+
+        <TextView
+            android:id="@+id/edss_q2"
+            style="@style/EDSSResultsQuestionCard"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/edss_a1"
+            app:layout_constraintBottom_toTopOf="@id/edss_a2"
+            android:text="@string/edss_question_2" />
+
+        <TextView
+            android:id="@+id/edss_a2"
+            style="@style/EDSSResultsAnswerCard"
+            android:text="@string/placeholder_very_short_text"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/edss_q2"
+            app:layout_constraintBottom_toTopOf="@id/edss_q3" />
+
+        <TextView
+            android:id="@+id/edss_q3"
+            style="@style/EDSSResultsQuestionCard"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/edss_a2"
+            app:layout_constraintBottom_toTopOf="@id/edss_a3"
+            android:text="@string/edss_question_3" />
+
+        <TextView
+            android:id="@+id/edss_a3"
+            style="@style/EDSSResultsAnswerCard"
+            android:text="@string/placeholder_very_short_text"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/edss_q3"
+            app:layout_constraintBottom_toTopOf="@id/edss_q4" />
+
+        <TextView
+            android:id="@+id/edss_q4"
+            style="@style/EDSSResultsQuestionCard"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/edss_a3"
+            app:layout_constraintBottom_toTopOf="@id/edss_a4"
+            android:text="@string/edss_question_4" />
+
+        <TextView
+            android:id="@+id/edss_a4"
+            style="@style/EDSSResultsAnswerCard"
+            android:text="@string/placeholder_very_short_text"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/edss_q4"
+            app:layout_constraintBottom_toTopOf="@id/edss_q5" />
+
+        <TextView
+            android:id="@+id/edss_q5"
+            style="@style/EDSSResultsQuestionCard"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/edss_a4"
+            app:layout_constraintBottom_toTopOf="@id/edss_a5"
+            android:text="@string/edss_question_5" />
+
+        <TextView
+            android:id="@+id/edss_a5"
+            style="@style/EDSSResultsAnswerCard"
+            android:text="@string/placeholder_very_short_text"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/edss_q5"
+            app:layout_constraintBottom_toTopOf="@id/edss_q6" />
+
+        <TextView
+            android:id="@+id/edss_q6"
+            style="@style/EDSSResultsQuestionCard"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/edss_a5"
+            app:layout_constraintBottom_toTopOf="@id/edss_a6"
+            android:text="@string/edss_question_6" />
+
+        <TextView
+            android:id="@+id/edss_a6"
+            style="@style/EDSSResultsAnswerCard"
+            android:text="@string/placeholder_very_short_text"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/edss_q6"
+            app:layout_constraintBottom_toTopOf="@id/edss_q7" />
+
+        <TextView
+            android:id="@+id/edss_q7"
+            style="@style/EDSSResultsQuestionCard"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/edss_a6"
+            app:layout_constraintBottom_toTopOf="@id/edss_a7"
+            android:text="@string/edss_question_7" />
+
+        <TextView
+            android:id="@+id/edss_a7"
+            style="@style/EDSSResultsAnswerCard"
+            android:text="@string/placeholder_very_short_text"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/edss_q7"
+            app:layout_constraintBottom_toTopOf="@id/edss_q8" />
+
+        <TextView
+            android:id="@+id/edss_q8"
+            style="@style/EDSSResultsQuestionCard"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/edss_a7"
+            app:layout_constraintBottom_toTopOf="@id/edss_a8"
+            android:text="@string/edss_question_8" />
+
+        <TextView
+            android:id="@+id/edss_a8"
+            style="@style/EDSSResultsAnswerCard"
+            android:text="@string/placeholder_very_short_text"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/edss_q8"
+            app:layout_constraintBottom_toTopOf="@id/edss_finish_button" />
+
+        <Button
+            android:id="@+id/edss_finish_button"
+            style="@style/Button"
+            android:layout_marginTop="@dimen/margin_32dp"
+            android:text="@string/finished"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/edss_a8"
+            app:layout_constraintBottom_toBottomOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

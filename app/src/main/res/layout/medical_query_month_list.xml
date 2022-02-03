@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/home_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="@dimen/margin_64dp">
+
+            <TextView
+                android:id="@+id/navigation_back"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:text="@string/back"
+                app:drawableStartCompat="@drawable/icon_baseline_arrow_back"
+                app:drawableTint="@color/blue_1"
+                style="@style/ButtonBack" />
+
+            <TextView
+                android:id="@+id/medical_query_title"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/navigation_back"
+                android:text="@string/medical_query"
+                app:drawableTint="@color/blue_1"
+                app:drawableEndCompat="@drawable/icon_info"
+                style="@style/HomeTitle" />
+
+            <com.google.android.material.progressindicator.LinearProgressIndicator
+                android:id="@+id/medical_query_progress_indicator"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_16dp"
+                android:layout_marginEnd="@dimen/margin_16dp"
+                android:layout_marginTop="@dimen/margin_16dp"
+                app:trackThickness="@dimen/line_progress_indicator_trackThickness"
+                app:trackCornerRadius="@dimen/line_progress_indicator_trackCornerRadius"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/medical_query_title" />
+
+            <TextView
+                android:id="@+id/medical_query_progress_indicator_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_16dp"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_size_20sp"
+                android:text="@string/placeholder_x_from_8"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/medical_query_progress_indicator" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/medical_query_conLay_additional_queries"
+                style="@style/ImageCard"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/margin_64dp"
+                android:layout_margin="@dimen/margin_16dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/medical_query_progress_indicator_text">
+
+                <TextView
+                    android:id="@+id/medical_query_additional_queries"
+                    style="@style/Subtitle"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="@dimen/margin_16dp"
+                    android:gravity="center_vertical"
+                    android:text="@string/medical_query_perform_additional_queries"
+                    android:textColor="@color/blue_1"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/imageView_medical_query_additional_queries"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/imageView_medical_query_additional_queries"
+                    android:layout_width="@dimen/icon_size"
+                    android:layout_height="@dimen/icon_size"
+                    android:layout_marginEnd="@dimen/margin_16dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:srcCompat="@drawable/icon_baseline_keyboard_arrow_right"
+                    app:tint="@color/blue_1"
+                    android:contentDescription="@string/placeholder_icon" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/medical_query_conLay_results"
+                style="@style/ImageCard"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/margin_64dp"
+                android:layout_margin="@dimen/margin_16dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/medical_query_conLay_additional_queries">
+
+                <TextView
+                    android:id="@+id/medical_query_results_text"
+                    style="@style/Subtitle"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="@dimen/margin_16dp"
+                    android:gravity="center_vertical"
+                    android:text="@string/result_medical_query"
+                    android:textColor="@color/blue_1"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/imageView"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/imageView"
+                    android:layout_width="@dimen/icon_size"
+                    android:layout_height="@dimen/icon_size"
+                    android:layout_marginEnd="@dimen/margin_16dp"
+                    app:layout_constraintStart_toEndOf="@+id/medical_query_results_text"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:srcCompat="@drawable/icon_baseline_keyboard_arrow_right"
+                    app:tint="@color/blue_1"
+                    android:contentDescription="@string/placeholder_icon" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/medical_query_recycler_view"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="@dimen/margin_16dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/medical_query_conLay_results"
+                android:orientation="vertical"
+                app:layoutManager="LinearLayoutManager"
+                tools:listitem="@layout/month_card" />
+
+            <ImageView
+                android:id="@+id/imageView_medical_query_icon"
+                android:visibility="gone"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_constraintDimensionRatio="1:1"
+                app:layout_constraintWidth_percent=".4"
+                app:layout_constraintVertical_bias=".1"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/medical_query_recycler_view"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:srcCompat="@drawable/icon_home_medical_query"
+                android:contentDescription="@string/placeholder_icon" />
+
+            <TextView
+                android:id="@+id/medical_query_done_text"
+                android:visibility="gone"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="@dimen/margin_16dp"
+                android:layout_marginStart="@dimen/margin_32dp"
+                android:layout_marginEnd="@dimen/margin_32dp"
+                android:paddingBottom="@dimen/margin_32dp"
+                android:gravity="center"
+                android:text="@string/medical_query_month_list_done_desc"
+                android:textColor="@color/green_1"
+                android:textSize="@dimen/text_size_18sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imageView_medical_query_icon" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/home_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/scrollView_home"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/navigation_back"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toTopOf="@id/title_diary"
+                android:text="@string/back"
+                app:drawableStartCompat="@drawable/icon_baseline_arrow_back"
+                app:drawableTint="@color/blue_1"
+                style="@style/ButtonBack" />
+
+            <TextView
+                android:id="@+id/title_diary"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/navigation_back"
+                app:layout_constraintBottom_toTopOf="@id/date"
+                android:text="@string/menu_diary"
+                android:textSize="@dimen/text_size_30sp"
+                app:drawableEndCompat="@drawable/icon_info"
+                style="@style/HomeTitle" />
+
+            <TextView
+                android:id="@+id/date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_16dp"
+                android:layout_marginTop="@dimen/margin_8dp"
+                android:layout_marginBottom="@dimen/margin_8dp"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_size_18sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/title_diary"
+                app:layout_constraintBottom_toTopOf="@id/diary_how_were_you_today"
+                android:text="@string/placeholder_date" />
+
+            <TextView
+                android:id="@+id/diary_how_were_you_today"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/diary_how_were_you_today"
+                android:paddingBottom="@dimen/margin_8dp"
+                style="@style/HomeTitle"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/date"
+                app:layout_constraintBottom_toTopOf="@id/card_diary_smileys" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/card_diary_smileys"
+                style="@style/SmileyCard"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/diary_how_were_you_today"
+                app:layout_constraintBottom_toTopOf="@+id/diary_how_were_you_today">
+
+                <ImageView
+                    android:id="@+id/imageView_feeling_very_good"
+                    android:layout_width="@dimen/button_height"
+                    android:layout_height="@dimen/button_height"
+                    android:contentDescription="@string/feeling_very_good"
+                    android:src="@drawable/ic_feeling_very_good"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias=".0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:tint="@color/gray_2" />
+
+                <ImageView
+                    android:id="@+id/imageView_feeling_good"
+                    android:layout_width="@dimen/button_height"
+                    android:layout_height="@dimen/button_height"
+                    android:contentDescription="@string/feeling_good"
+                    android:src="@drawable/ic_feeling_good"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias=".25"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:tint="@color/gray_2" />
+
+                <ImageView
+                    android:id="@+id/imageView_feeling_neutral"
+                    android:layout_width="@dimen/button_height"
+                    android:layout_height="@dimen/button_height"
+                    android:contentDescription="@string/feeling_neutral"
+                    android:src="@drawable/ic_feeling_neutral"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:tint="@color/gray_2" />
+
+                <ImageView
+                    android:id="@+id/imageView_feeling_bad"
+                    android:layout_width="@dimen/button_height"
+                    android:layout_height="@dimen/button_height"
+                    android:contentDescription="@string/feeling_bad"
+                    android:src="@drawable/ic_feeling_bad"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias=".75"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:tint="@color/gray_2" />
+
+                <ImageView
+                    android:id="@+id/imageView_feeling_very_bad"
+                    android:layout_width="@dimen/button_height"
+                    android:layout_height="@dimen/button_height"
+                    android:contentDescription="@string/feeling_very_bad"
+                    android:src="@drawable/ic_feeling_very_bad"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="1"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:tint="@color/gray_2" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/card_diary"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@+id/diary_how_were_you_today"
+                app:layout_constraintBottom_toTopOf="@id/title_symptoms"
+                style="@style/HowAreYouCard">
+
+                <TextView
+                    android:id="@+id/feeling_desc"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:textSize="@dimen/text_size_20sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:layout_marginTop="@dimen/margin_24dp"
+                    android:layout_marginBottom="@dimen/margin_16dp"
+                    android:text="@string/diary_how_were_you_today"
+                    android:textColor="@color/gray_2" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <TextView
+                android:id="@+id/title_symptoms"
+                style="@style/HomeTitle"
+                android:text="@string/my_symptoms"
+                app:layout_constraintBottom_toTopOf="@id/card_symptoms"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/card_diary" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/card_symptoms"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@+id/title_symptoms"
+                android:paddingBottom="@dimen/margin_32dp"
+                style="@style/Card">
+
+                <TextView
+                    android:id="@+id/select_symptoms"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:layout_marginEnd="@dimen/margin_16dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toTopOf="@id/slider_recycler_view"
+                    android:text="@string/select_symptoms"
+                    android:textColor="@color/blue_1"
+                    app:drawableEndCompat="@drawable/icon_toggle_off"
+                    android:drawablePadding="@dimen/icon_padding_2dp"
+                    style="@style/Subtitle" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/slider_recycler_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/select_symptoms"
+                    app:layout_constraintBottom_toTopOf="@id/button_save"
+                    tools:listitem="@layout/slider" />
+
+                <Button
+                    android:id="@+id/button_save"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/slider_recycler_view"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:layout_marginTop="@dimen/margin_64dp"
+                    android:text="@string/save"
+                    app:icon="@drawable/icon_save"
+                    app:iconGravity="textStart"
+                    style="@style/Button" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/margin_64dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/card_symptoms"
+                app:layout_constraintBottom_toBottomOf="parent">
+            </View>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

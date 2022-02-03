@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/medication_recycler_view_item"
+    style="@style/Card"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintBottom_toBottomOf="parent"
+    android:paddingTop="@dimen/margin_16dp"
+    android:paddingBottom="@dimen/margin_16dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/medication_item_upper_part"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/medication_item_lower_part">
+
+        <TextView
+            android:id="@+id/medication_item_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_16dp"
+            android:text="@string/placeholder_medication_medication"
+            android:textColor="@color/blue_1"
+            android:textStyle="bold"
+            android:textSize="@dimen/text_size_20sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/medication_item_amount" />
+
+        <TextView
+            android:id="@+id/medication_item_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_16dp"
+            android:text="@string/placeholder_time"
+            android:textSize="@dimen/text_size_18sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/medication_item_title" />
+
+        <TextView
+            android:id="@+id/medication_item_amount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_32dp"
+            android:text="@string/placeholder_medication_amount"
+            android:textSize="@dimen/text_size_18sp"
+            app:layout_constraintStart_toEndOf="@id/medication_item_time"
+            app:layout_constraintTop_toBottomOf="@id/medication_item_title" />
+
+        <ImageView
+            android:id="@+id/medication_arrow"
+            android:layout_width="@dimen/icon_size"
+            android:layout_height="@dimen/icon_size"
+            android:layout_marginEnd="@dimen/margin_16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:srcCompat="@drawable/icon_baseline_keyboard_arrow_right"
+            app:tint="@color/blue_1"
+            android:contentDescription="@string/placeholder_icon" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/medication_item_lower_part"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/medication_item_upper_part"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/medication_timestamp_list"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:orientation="vertical"
+            app:layoutManager="LinearLayoutManager"
+            tools:listitem="@layout/medication_timestamp_recycler_view_item" />
+
+        <TextView
+            android:id="@+id/medication_item_discontinue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/margin_16dp"
+            app:layout_constraintEnd_toStartOf="@id/medication_item_edit"
+            app:layout_constraintTop_toBottomOf="@id/medication_timestamp_list"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:text="@string/discontinue"
+            android:textSize="@dimen/text_size_20sp"
+            android:textColor="@color/red_1" />
+
+        <TextView
+            android:id="@+id/medication_item_edit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/margin_16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/medication_timestamp_list"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:text="@string/edit"
+            android:textSize="@dimen/text_size_20sp"
+            android:textColor="@color/blue_1" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

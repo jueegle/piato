@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="blue_1">#116cb4</color>
+    <color name="blue_2">#7fbddc</color>
+    <color name="blue_3">#bedeed</color>
+    <color name="blue_4">#deeef6</color>
+
+    <color name="green_1">#158f82</color>
+    <color name="green_2">#89c7c0</color>
+    <color name="green_3">#c4e3df</color>
+    <color name="green_4">#e1f1ef</color>
+
+    <color name="yellow_1">#ffba31</color>
+    <color name="yellow_2">#ffdc97</color>
+    <color name="yellow_3">#ffedcb</color>
+    <color name="yellow_4">#fff6e5</color>
+
+    <color name="red_1">#ff1a62</color>
+    <color name="red_2">#ff8cb0</color>
+    <color name="red_3">#ffc5d7</color>
+    <color name="red_4">#ffe2eb</color>
+
+    <color name="petrol_1">#127d9a</color>
+    <color name="petrol_2">#88bdcc</color>
+    <color name="petrol_3">#c3dee6</color>
+    <color name="petrol_4">#e1eff2</color>
+
+    <color name="orange_1">#ff6a49</color>
+    <color name="orange_2">#ffb4a3</color>
+    <color name="orange_3">#ffd9d1</color>
+    <color name="orange_4">#ffece8</color>
+
+    <color name="violett_1">#88428a</color>
+    <color name="violett_2">#c3a0c4</color>
+    <color name="violett_3">#e1cfe2</color>
+    <color name="violett_4">#f1e8f1</color>
+
+    <color name="black">#000000</color>
+    <color name="gray_0">#3b3b3b</color>
+    <color name="gray_1">#9c9c9c</color>
+    <color name="gray_2">#cdcdcd</color>
+    <color name="gray_3">#e5e5e5</color>
+    <color name="gray_4">#f2f2f2</color>
+    <color name="gray_5">#f8f8f8</color>
+    <color name="gray_6">#fbfbfb</color>
+    <color name="white">#ffffff</color>
+
+    <color name="transparent_shadow">#66000000</color>
+
+    <color name="transparent_dark_shadow">#bb000000</color>
+
+    <color name="transparent">#00000000</color>
+    <color name="colorTransparent">#00000000</color>
+</resources>

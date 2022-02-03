@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:focusableInTouchMode="true"
+        android:clickable="true"
+        android:focusable="true"
+        android:id="@+id/home_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingBottom="@dimen/padding_page_bottom_96dp">
+
+        <TextView
+            android:id="@+id/navigation_back"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:text="@string/back"
+            app:drawableStartCompat="@drawable/icon_baseline_arrow_back"
+            app:drawableTint="@color/blue_1"
+            style="@style/ButtonBack" />
+
+        <TextView
+            android:id="@+id/title_other_symptoms"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/navigation_back"
+            android:text="@string/other_symptoms"
+            app:drawableEndCompat="@drawable/icon_info"
+            style="@style/HomeTitle" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/other_symptom_date_textfield"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/title_other_symptoms"
+            app:layout_constraintBottom_toTopOf="@id/other_symptom_time_textfield"
+            android:hint="@string/select_date"
+            style="@style/TextField">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/other_symptom_date_input"
+                android:focusable="false"
+                android:clickable="false"
+                style="@style/EditText"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/other_symptom_time_textfield"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/other_symptom_date_textfield"
+            app:layout_constraintBottom_toTopOf="@id/other_symptom_note_textfield"
+            android:hint="@string/select_time"
+            style="@style/TextField">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/other_symptom_time_input"
+                android:focusable="false"
+                android:clickable="false"
+                style="@style/EditText"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/other_symptom_note_textfield"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/other_symptom_time_textfield"
+            app:layout_constraintBottom_toTopOf="@id/other_symptom_button_save"
+            android:hint="@string/enter_note"
+            style="@style/TextField">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/other_symptom_note_input"
+                style="@style/EditText"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <Button
+            android:id="@+id/other_symptom_button_save"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/other_symptom_note_textfield"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginTop="@dimen/margin_24dp"
+            android:text="@string/save"
+            app:icon="@drawable/icon_save"
+            app:iconGravity="textStart"
+            style="@style/Button" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>

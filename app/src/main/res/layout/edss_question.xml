@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="@dimen/padding_page_bottom_96dp">
+
+        <TextView
+            android:id="@+id/navigation_back"
+            style="@style/ButtonBack"
+            android:text="@string/back"
+            app:drawableStartCompat="@drawable/icon_baseline_arrow_back"
+            app:drawableTint="@color/blue_1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/edss_title"
+            style="@style/HomeTitle"
+            android:text="@string/edss"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/navigation_back" />
+
+        <com.google.android.material.progressindicator.LinearProgressIndicator
+            android:id="@+id/edss_progressBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_16dp"
+            android:layout_marginEnd="@dimen/margin_16dp"
+            android:layout_marginTop="@dimen/margin_16dp"
+            app:trackThickness="@dimen/line_progress_indicator_trackThickness"
+            app:trackCornerRadius="@dimen/line_progress_indicator_trackCornerRadius"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/edss_title" />
+
+        <TextView
+            android:id="@+id/edss_index_indicator"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_16dp"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_size_20sp"
+            android:text="@string/placeholder_x_from_8"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/edss_progressBar" />
+
+        <TextView
+            android:id="@+id/edss_question"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_16dp"
+            android:layout_marginTop="@dimen/margin_8dp"
+            android:layout_marginEnd="@dimen/margin_16dp"
+            android:text="@string/placeholder_short_text"
+            android:textSize="@dimen/text_size_20sp"
+            android:textColor="@color/black"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/edss_index_indicator" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/edss_recyclerView"
+            android:layout_height="wrap_content"
+            android:layout_width="0dp"
+            android:layout_marginStart="@dimen/margin_16dp"
+            android:layout_marginTop="@dimen/margin_16dp"
+            android:layout_marginEnd="@dimen/margin_16dp"
+            style="@style/Card"
+            android:padding="0dp"
+            android:longClickable="false"
+            android:nestedScrollingEnabled="false"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/edss_question"
+            tools:listitem="@layout/edss_list_item" />
+
+        <Button
+            android:id="@+id/edss_cancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_16dp"
+            android:layout_marginTop="@dimen/margin_16dp"
+            android:background="@drawable/transparent_button"
+            app:icon="@drawable/icon_baseline_close"
+            app:iconPadding="@dimen/margin_8dp"
+            style="@style/Widget.MaterialComponents.Button.TextButton"
+            android:text="@string/cancel"
+            android:letterSpacing="0.05"
+            android:textColor="@color/blue_1"
+            android:textSize="@dimen/text_size_20sp"
+            android:textAllCaps="false"
+            android:fontFamily="sans-serif"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/edss_recyclerView"
+            app:layout_constraintBottom_toBottomOf="parent" />
+
+        <Button
+            android:id="@+id/edss_weiter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_16dp"
+            android:layout_marginEnd="@dimen/margin_16dp"
+            android:background="@drawable/transparent_button"
+            app:icon="@drawable/icon_baseline_arrow_forward"
+            app:iconGravity="end"
+            app:iconPadding="@dimen/margin_8dp"
+            style="@style/Widget.MaterialComponents.Button.TextButton"
+            android:text="@string/next"
+            android:letterSpacing="0.05"
+            android:textStyle="bold"
+            android:textSize="@dimen/text_size_20sp"
+            android:textAllCaps="false"
+            android:fontFamily="sans-serif"
+            android:enabled="false"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/edss_recyclerView"
+            app:layout_constraintBottom_toBottomOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>

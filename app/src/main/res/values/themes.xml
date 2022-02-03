@@ -1,0 +1,433 @@
+<resources>
+    <!-- Base application theme. -->
+    <style name="Theme.emendia" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/blue_1</item>
+        <item name="colorPrimaryVariant">@color/blue_2</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/blue_1</item>
+        <item name="colorSecondaryVariant">@color/blue_2</item>
+        <item name="colorOnSecondary">@color/black</item>
+        <item name="android:colorBackground">@color/gray_4</item>
+        <!-- Status bar color. -->
+        <item name="android:windowTranslucentStatus">true</item>
+    </style>
+
+    <style name="Card" parent="Theme.MaterialComponents">
+        <item name="android:layout_marginStart">@dimen/margin_16dp</item>
+        <item name="android:layout_marginEnd">@dimen/margin_16dp</item>
+        <item name="android:layout_marginTop">@dimen/margin_8dp</item>
+        <item name="android:layout_marginBottom">@dimen/margin_8dp</item>
+        <item name="android:paddingTop">@dimen/margin_8dp</item>
+        <item name="android:paddingBottom">@dimen/margin_8dp</item>
+        <item name="android:background">@drawable/card_layout</item>
+        <item name="android:elevation">@dimen/elevation_4dp</item>
+    </style>
+
+    <style name="EDSSResultsQuestionCard" parent="Theme.MaterialComponents">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_marginStart">@dimen/margin_16dp</item>
+        <item name="android:layout_marginEnd">@dimen/margin_64dp</item>
+        <item name="android:layout_marginTop">@dimen/margin_12dp</item>
+        <item name="android:layout_marginBottom">@dimen/margin_8dp</item>
+        <item name="android:textSize">@dimen/text_size_20sp</item>
+        <item name="android:padding">@dimen/margin_16dp</item>
+        <item name="android:background">@drawable/edss_results_question_card</item>
+        <item name="android:elevation">@dimen/elevation_4dp</item>
+    </style>
+
+    <style name="EDSSResultsAnswerCard" parent="Theme.MaterialComponents">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_marginStart">@dimen/margin_64dp</item>
+        <item name="android:layout_marginEnd">@dimen/margin_16dp</item>
+        <item name="android:layout_marginTop">@dimen/margin_8dp</item>
+        <item name="android:layout_marginBottom">@dimen/margin_12dp</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">@dimen/text_size_20sp</item>
+        <item name="android:padding">@dimen/margin_16dp</item>
+        <item name="android:background">@drawable/edss_results_answer_card</item>
+        <item name="android:elevation">@dimen/elevation_4dp</item>
+    </style>
+
+    <style name="HowAreYouCard" parent="Theme.MaterialComponents">
+        <item name="android:layout_marginStart">@dimen/margin_16dp</item>
+        <item name="android:layout_marginEnd">@dimen/margin_16dp</item>
+        <item name="android:layout_marginBottom">@dimen/margin_8dp</item>
+        <item name="android:paddingTop">@dimen/smiley_card_padding</item>
+        <item name="android:paddingBottom">@dimen/margin_8dp</item>
+        <item name="android:background">@drawable/card_layout_how_are_you</item>
+        <item name="android:elevation">@dimen/elevation_4dp</item>
+    </style>
+
+    <style name="SmileyCard" parent="Theme.MaterialComponents">
+        <item name="android:layout_marginStart">@dimen/margin_16dp</item>
+        <item name="android:layout_marginEnd">@dimen/margin_16dp</item>
+        <item name="android:layout_marginBottom">@dimen/margin_8dp</item>
+        <item name="android:padding">@dimen/margin_8dp</item>
+        <item name="android:background">@drawable/card_smiley_layout</item>
+        <item name="android:elevation">@dimen/elevation_5dp</item>
+    </style>
+
+    <style name="ImageCard" parent="Theme.MaterialComponents">
+        <item name="android:layout_marginTop">@dimen/margin_8dp</item>
+        <item name="android:layout_marginBottom">@dimen/margin_8dp</item>
+        <item name="android:layout_marginStart">@dimen/margin_8dp</item>
+        <item name="android:layout_marginEnd">@dimen/margin_8dp</item>
+        <item name="shapeAppearanceOverlay">@style/ShapeAppearance.Card</item>
+        <item name="android:background">@drawable/card_layout</item>
+        <item name="android:elevation">@dimen/elevation_4dp</item>
+    </style>
+
+    <style name="HomeMenuButton" parent="Widget.MaterialComponents.Button.TextButton">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:paddingStart">@dimen/margin_16dp</item>
+        <item name="android:paddingEnd">@dimen/margin_16dp</item>
+        <item name="android:textSize">@dimen/menu_text_size_20sp</item>
+        <item name="shapeAppearanceOverlay">@style/ShapeAppearance.HomeMenuButton</item>
+        <item name="android:insetTop">0dp</item>
+        <item name="android:insetBottom">0dp</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:letterSpacing">0</item>
+        <item name="android:gravity">center_vertical</item>
+    </style>
+
+    <style name="HomeAllButton" parent="Widget.MaterialComponents.Button.TextButton">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">@dimen/large_icon_size</item>
+        <item name="android:layout_marginEnd">@dimen/margin_8dp</item>
+        <item name="android:layout_marginBottom">@dimen/margin_8dp</item>
+        <item name="android:textSize">@dimen/text_size_20sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="shapeAppearanceOverlay">@style/ShapeAppearance.HomeMenuButton</item>
+        <item name="android:insetTop">0dp</item>
+        <item name="android:insetBottom">0dp</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:letterSpacing">0</item>
+        <item name="android:gravity">center_vertical</item>
+    </style>
+
+    <style name="Button" parent="Theme.MaterialComponents">
+        <item name="android:layout_height">@dimen/button_height</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">@dimen/text_size_20sp</item>
+        <item name="shapeAppearanceOverlay">@style/ShapeAppearance.Button</item>
+        <item name="android:layout_marginTop">@dimen/margin_8dp</item>
+        <item name="android:layout_marginBottom">@dimen/margin_8dp</item>
+        <item name="android:layout_marginStart">@dimen/margin_16dp</item>
+        <item name="android:layout_marginEnd">@dimen/margin_16dp</item>
+        <item name="android:insetTop">0dp</item>
+        <item name="android:insetBottom">0dp</item>
+        <item name="android:elevation">@dimen/elevation_4dp</item>
+    </style>
+
+    <style name="ShapeAppearance.HomeMenuButton" parent="ShapeAppearance.MaterialComponents">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">0dp</item>
+    </style>
+
+    <style name="ShapeAppearance.Button" parent="ShapeAppearance.MaterialComponents">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">@dimen/button_corner_radius</item>
+    </style>
+
+    <style name="ShapeAppearance.Card" parent="ShapeAppearance.MaterialComponents">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">@dimen/card_corner_radius</item>
+    </style>
+
+    <style name="ShapeAppearance.ImageCardKnowledgeList" parent="ShapeAppearance.MaterialComponents">
+        <item name="cornerFamilyTopLeft">rounded</item>
+        <item name="cornerSizeTopLeft">@dimen/card_corner_radius</item>
+        <item name="cornerFamilyBottomLeft">rounded</item>
+        <item name="cornerSizeBottomLeft">@dimen/card_corner_radius</item>
+    </style>
+
+    <style name="HomeTitle" parent="Theme.MaterialComponents">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:textSize">@dimen/text_size_24sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:paddingStart">@dimen/margin_16dp</item>
+        <item name="android:paddingEnd">@dimen/margin_16dp</item>
+        <item name="android:layout_marginTop">@dimen/margin_16dp</item>
+        <item name="android:drawablePadding">@dimen/icon_padding_2dp</item>
+    </style>
+
+    <style name="Subtitle" parent="Theme.MaterialComponents">
+        <item name="android:textSize">@dimen/text_size_18sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="SubtitleSymptom" parent="Theme.MaterialComponents">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/text_size_18sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:paddingStart">@dimen/margin_16dp</item>
+        <item name="android:paddingEnd">@dimen/margin_16dp</item>
+        <item name="android:layout_marginTop">@dimen/margin_32dp</item>
+        <item name="android:drawablePadding">@dimen/icon_padding_2dp</item>
+        <item name="drawableEndCompat">@drawable/icon_info</item>
+    </style>
+
+    <style name="SliderValue" parent="Theme.MaterialComponents">
+        <item name="android:layout_height">@dimen/large_icon_size</item>
+        <item name="android:layout_width">@dimen/large_icon_size</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">@dimen/text_size_20sp</item>
+        <item name="android:layout_margin">@dimen/margin_8dp</item>
+        <item name="android:text">@string/question_mark</item>
+        <item name="android:background">@drawable/slider_value_gray_background</item>
+    </style>
+
+    <style name="SliderBackground" parent="Theme.MaterialComponents">
+        <item name="android:layout_height">@dimen/slider_background_height</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_marginStart">@dimen/margin_16dp</item>
+        <item name="android:layout_marginEnd">@dimen/margin_16dp</item>
+        <item name="android:layout_marginTop">@dimen/margin_48dp</item>
+        <item name="android:layout_marginBottom">@dimen/margin_16dp</item>
+        <item name="android:background">@drawable/slider_background</item>
+    </style>
+
+    <style name="Slider" parent="Theme.MaterialComponents">
+        <item name="trackHeight">@dimen/slider_track_height</item>
+        <item name="android:valueFrom">0</item>
+        <item name="android:valueTo">10</item>
+        <item name="android:stepSize">1</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginStart">@dimen/slider_background_height</item>
+        <item name="android:layout_marginEnd">@dimen/slider_background_height</item>
+    </style>
+
+    <style name="SliderQuestion" parent="Theme.MaterialComponents">
+        <item name="trackHeight">@dimen/slider_track_height</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginStart">@dimen/slider_background_height</item>
+        <item name="android:layout_marginEnd">@dimen/slider_background_height</item>
+    </style>
+
+    <style name="MFISSlider" parent="Theme.MaterialComponents">
+        <item name="trackHeight">@dimen/slider_track_height</item>
+        <item name="android:valueFrom">0</item>
+        <item name="android:valueTo">4</item>
+        <item name="android:stepSize">1</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginStart">@dimen/slider_background_height</item>
+        <item name="android:layout_marginEnd">@dimen/slider_background_height</item>
+    </style>
+
+
+    <style name="SliderHeader" parent="Theme.MaterialComponents">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">@dimen/text_size_14sp</item>
+        <item name="android:layout_marginStart">@dimen/slider_background_height</item>
+        <item name="android:layout_marginEnd">@dimen/slider_background_height</item>
+    </style>
+
+    <style name="ButtonPlusMinus" parent="Theme.MaterialComponents">
+        <item name="android:layout_width">@dimen/slider_background_height</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">@dimen/text_size_22sp</item>
+        <item name="shapeAppearanceOverlay">@style/ShapeAppearance.Button</item>
+        <item name="android:padding">0dp</item>
+        <item name="android:layout_margin">0dp</item>
+        <item name="android:insetTop">0dp</item>
+        <item name="android:insetBottom">0dp</item>
+        <item name="android:elevation">@dimen/elevation_4dp</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:backgroundTint">@color/gray_2</item>
+    </style>
+
+    <style name="SwitchSymptoms" parent="Theme.MaterialComponents">
+        <item name="android:textSize">@dimen/text_size_18sp</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/switch_height</item>
+        <item name="android:paddingStart">@dimen/margin_16dp</item>
+        <item name="android:paddingEnd">@dimen/margin_16dp</item>
+    </style>
+
+    <style name="Margins" parent="Theme.MaterialComponents">
+        <item name="android:layout_marginStart">16dp</item>
+        <item name="android:layout_marginEnd">16dp</item>
+    </style>
+
+    <style name="ButtonBack" parent="Theme.MaterialComponents">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">@dimen/margin_64dp</item>
+        <item name="android:layout_marginBottom">@dimen/margin_24dp</item>
+        <item name="android:textSize">@dimen/text_size_20sp</item>
+        <item name="android:textColor">@color/blue_1</item>
+        <item name="android:layout_marginStart">@dimen/margin_16dp</item>
+        <item name="android:drawablePadding">@dimen/icon_padding_2dp</item>
+    </style>
+
+    <style name="CalendarLegendText" parent="TextAppearance.AppCompat">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">@color/blue_1</item>
+        <item name="android:textSize">@dimen/text_size_16sp</item>
+    </style>
+
+    <style name="TransparentGrayBackground" parent="Theme.emendia">
+        <item name="android:background">@color/transparent_shadow</item>
+    </style>
+
+    <style name="AlertDialogStyle" parent="ThemeOverlay.MaterialComponents.MaterialAlertDialog">
+        <item name="materialAlertDialogTitleTextStyle">@style/MyTitle</item>
+        <item name="materialAlertDialogBodyTextStyle">@style/MyBody</item>
+        <item name="buttonBarPositiveButtonStyle">@style/PositiveButtonStyle</item>
+    </style>
+    <style name="MyTitle" parent="@style/MaterialAlertDialog.MaterialComponents.Title.Text">
+        <item name="android:textAppearance">?attr/textAppearanceHeadline6</item>
+    </style>
+    <style name="MyBody" parent="@style/MaterialAlertDialog.MaterialComponents">
+        <item name="android:textAppearance">?attr/textAppearanceBody1</item>
+    </style>
+    <style name="PositiveButtonStyle" parent="Widget.MaterialComponents.Button.TextButton.Dialog">
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">@dimen/text_size_16sp</item>
+    </style>
+
+    <style name="TextField" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_marginTop">@dimen/margin_8dp</item>
+        <item name="android:layout_marginBottom">@dimen/margin_8dp</item>
+        <item name="android:layout_marginStart">@dimen/margin_16dp</item>
+        <item name="android:layout_marginEnd">@dimen/margin_16dp</item>
+    </style>
+    <style name="EditText" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:textSize">@dimen/text_size_20sp</item>
+    </style>
+
+    <style name="TableIcon" parent="Theme.MaterialComponents">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">0dp</item>
+        <item name="android:padding">5dp</item>
+    </style>
+
+    <style name="NoDataForThisTimerange" parent="Theme.MaterialComponents">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/progress_no_data_height</item>
+        <item name="android:layout_marginStart">@dimen/margin_16dp</item>
+        <item name="android:layout_marginEnd">@dimen/margin_16dp</item>
+        <item name="android:padding">@dimen/margin_8dp</item>
+        <item name="android:layout_marginTop">@dimen/margin_8dp</item>
+        <item name="android:layout_marginBottom">@dimen/margin_8dp</item>
+        <item name="android:background">@drawable/card_layout</item>
+        <item name="android:elevation">@dimen/elevation_4dp</item>
+        <item name="android:textSize">@dimen/text_size_16sp</item>
+        <item name="android:textColor">@color/gray_1</item>
+        <item name="android:gravity">center</item>
+        <item name="android:visibility">gone</item>
+        <item name="android:text">@string/no_data_for_this_timerange</item>
+    </style>
+
+    <!-- Report Relapse start -->
+
+    <style name="ReportRelapseNavigationButtonText" parent="Theme.MaterialComponents">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_margin">@dimen/margin_4dp</item>
+        <item name="android:textSize">@dimen/text_size_20sp</item>
+        <item name="android:textColor">@drawable/selector_report_relapse_next_button_text_color</item>
+        <item name="android:layout_gravity">center</item>
+    </style>
+
+    <style name="ReportRelapseQuestionText" parent="Theme.MaterialComponents">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginStart">@dimen/margin_16dp</item>
+        <item name="android:layout_marginTop">@dimen/margin_8dp</item>
+        <item name="android:layout_marginBottom">@dimen/margin_8dp</item>
+        <item name="android:layout_marginEnd">@dimen/margin_48dp</item>
+        <item name="android:background">@drawable/bg_diary_report_relapse_question</item>
+        <item name="android:elevation">@dimen/elevation_8dp</item>
+        <item name="android:paddingHorizontal">@dimen/elevation_8dp</item>
+        <item name="android:paddingVertical">12dp</item>
+        <item name="android:textSize">@dimen/text_size_20sp</item>
+    </style>
+
+    <style name="ReportRelapseInputText" parent="Theme.MaterialComponents">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:minWidth">50dp</item>
+        <item name="android:layout_gravity">end</item>
+        <item name="android:gravity">center_horizontal</item>
+        <item name="android:layout_marginStart">@dimen/margin_48dp</item>
+        <item name="android:layout_marginTop">@dimen/margin_8dp</item>
+        <item name="android:layout_marginBottom">@dimen/margin_8dp</item>
+        <item name="android:layout_marginEnd">@dimen/margin_16dp</item>
+        <item name="android:background">@drawable/bg_diary_report_relapse_input</item>
+        <item name="android:elevation">@dimen/elevation_8dp</item>
+        <item name="android:paddingHorizontal">@dimen/elevation_8dp</item>
+        <item name="android:paddingVertical">12dp</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">@dimen/text_size_20sp</item>
+    </style>
+
+    <style name="ReportRelapseLabel" parent="Theme.MaterialComponents">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@drawable/selector_report_relapse_label</item>
+        <item name="android:button">@android:color/transparent</item>
+        <item name="android:checked">false</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">@drawable/selector_report_relapse_text_color</item>
+        <item name="android:textSize">@dimen/text_size_20sp</item>
+    </style>
+
+    <style name="ReportRelapseStartRadioButton" parent="Theme.MaterialComponents">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@drawable/selector_report_relapse_radiobutton</item>
+        <item name="android:button">@android:color/transparent</item>
+        <item name="android:checked">false</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">@drawable/selector_report_relapse_text_color</item>
+        <item name="android:textSize">@dimen/text_size_20sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <!-- Report Relapse end -->
+
+    <style name="MfisLabel" parent="Theme.MaterialComponents">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">@dimen/icon_size_30dp</item>
+        <item name="android:layout_margin">@dimen/margin_4dp</item>
+        <item name="android:paddingTop">@dimen/margin_4dp</item>
+        <item name="android:paddingBottom">@dimen/margin_4dp</item>
+        <item name="android:paddingStart">@dimen/margin_16dp</item>
+        <item name="android:paddingEnd">@dimen/margin_16dp</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textSize">@dimen/text_size_16sp</item>
+    </style>
+
+    <style name="SeekBarEQ5D" parent="">
+        <item name="android:layout_height">0dp</item>
+        <item name="android:layout_width">0dp</item>
+        <item name="android:background">@color/black</item>
+    </style>
+</resources>

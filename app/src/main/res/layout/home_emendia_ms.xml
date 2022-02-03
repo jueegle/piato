@@ -1,0 +1,404 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/home_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/init_emendia_ms_cover"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingBottom="70dp"
+        android:elevation="10dp"
+        android:background="@color/transparent_dark_shadow"
+        android:visibility="gone">
+
+        <ProgressBar
+            style="?android:attr/progressBarStyle"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            app:layout_constraintVertical_bias=".4"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:padding="16dp"
+            android:gravity="center"
+            android:lineSpacingMultiplier="1.5"
+            app:layout_constraintVertical_bias=".55"
+            android:textSize="@dimen/text_size_20sp"
+            android:text="@string/initializing_emendia_ms"
+            android:textColor="@color/white"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/floating_menu"
+        android:layout_width="@dimen/button_height"
+        android:layout_height="@dimen/button_height"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias=".05"
+        app:layout_constraintVertical_bias=".07"
+        app:maxImageSize="@dimen/large_icon_size"
+        app:fabCustomSize="@dimen/button_height"
+        app:tint="@color/white"
+        app:backgroundTint="@color/blue_1"
+        app:srcCompat="@drawable/ic_menu"
+        android:elevation="@dimen/elevation_8dp"
+        android:contentDescription="@string/menu" />
+
+    <TextView
+        android:id="@+id/floating_menu_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/menu"
+        android:textColor="@color/white"
+        android:textSize="@dimen/text_size_16sp"
+        android:textStyle="bold"
+        android:elevation="2dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/floating_menu"
+        app:layout_constraintHorizontal_bias=".07" />
+
+    <androidx.drawerlayout.widget.DrawerLayout
+        android:id="@+id/drawerLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:elevation="1dp">
+
+        <androidx.core.widget.NestedScrollView
+            android:id="@+id/scrollView_home"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="@dimen/margin_64dp">
+
+                <ImageView
+                    android:id="@+id/header_image"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:scaleType="fitCenter"
+                    android:adjustViewBounds="true"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:src="@drawable/quote_01"
+                    android:layout_marginBottom="@dimen/margin_16dp"
+                    android:contentDescription="@string/placeholder_short_text" />
+
+                <TextView
+                    android:id="@+id/home_slogan"
+                    style="@style/Margins"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintWidth_percent=".7"
+                    app:layout_constraintHorizontal_bias="1"
+                    android:gravity="center"
+                    android:lineSpacingMultiplier="1.1"
+                    android:text="@string/placeholder_short_text"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/text_size_18sp"
+                    app:layout_constraintBottom_toTopOf="@id/home_slogan_author"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/header_image"
+                    app:layout_constraintVertical_bias="0.915" />
+
+                <TextView
+                    android:id="@+id/home_slogan_author"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintWidth_percent=".7"
+                    app:layout_constraintHorizontal_bias="1"
+                    android:text="@string/placeholder_very_short_text"
+                    android:gravity="center"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/text_size_12sp"
+                    style="@style/Margins"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/header_image"
+                    app:layout_constraintBottom_toBottomOf="@id/header_image"
+                    app:layout_constraintVertical_bias=".96" />
+
+                <TextView
+                    android:id="@+id/title_diary"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/header_image"
+                    android:text="@string/diary_how_were_you_today"
+                    style="@style/HomeTitle"
+                    app:drawableEndCompat="@drawable/icon_info" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/card_diary_smileys"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/title_diary"
+                    android:layout_marginTop="8dp"
+                    style="@style/SmileyCard">
+
+                    <ImageView
+                        android:id="@+id/imageView_feeling_very_good"
+                        android:layout_width="@dimen/button_height"
+                        android:layout_height="@dimen/button_height"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintHorizontal_bias=".0"
+                        android:src="@drawable/ic_feeling_very_good"
+                        android:contentDescription="@string/feeling_very_good"/>
+
+                    <ImageView
+                        android:id="@+id/imageView_feeling_good"
+                        android:layout_width="@dimen/button_height"
+                        android:layout_height="@dimen/button_height"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintHorizontal_bias=".25"
+                        android:src="@drawable/ic_feeling_good"
+                        android:contentDescription="@string/feeling_good"/>
+
+                    <ImageView
+                        android:id="@+id/imageView_feeling_neutral"
+                        android:layout_width="@dimen/button_height"
+                        android:layout_height="@dimen/button_height"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        android:src="@drawable/ic_feeling_neutral"
+                        android:contentDescription="@string/feeling_neutral"/>
+
+                    <ImageView
+                        android:id="@+id/imageView_feeling_bad"
+                        android:layout_width="@dimen/button_height"
+                        android:layout_height="@dimen/button_height"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintHorizontal_bias=".75"
+                        android:src="@drawable/ic_feeling_bad"
+                        android:contentDescription="@string/feeling_bad"/>
+
+                    <ImageView
+                        android:id="@+id/imageView_feeling_very_bad"
+                        android:layout_width="@dimen/button_height"
+                        android:layout_height="@dimen/button_height"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintHorizontal_bias="1"
+                        android:src="@drawable/ic_feeling_very_bad"
+                        android:contentDescription="@string/feeling_very_bad"/>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/button_other_symptoms"
+                    android:layout_height="@dimen/button_height"
+                    android:layout_width="0dp"
+                    android:layout_marginStart="@dimen/margin_16dp"
+                    android:layout_marginEnd="@dimen/margin_4dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/button_report_relapse"
+                    app:layout_constraintTop_toBottomOf="@+id/card_diary_smileys"
+                    app:layout_constraintBottom_toTopOf="@id/your_month"
+                    android:background="@drawable/card_layout"
+                    android:elevation="@dimen/elevation_8dp">
+
+                    <TextView
+                        android:id="@+id/button_other_symptoms_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        android:text="@string/other_symptoms"
+                        android:textStyle="bold"
+                        android:textColor="@color/blue_1"
+                        android:textSize="@dimen/text_size_18sp"
+                        android:gravity="center"
+                        app:drawableStartCompat="@drawable/icon_symptoms" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/button_report_relapse"
+                    android:layout_height="@dimen/button_height"
+                    android:layout_width="0dp"
+                    android:layout_marginStart="@dimen/margin_4dp"
+                    android:layout_marginEnd="@dimen/margin_16dp"
+                    app:layout_constraintStart_toEndOf="@id/button_other_symptoms"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/button_other_symptoms"
+                    app:layout_constraintBottom_toBottomOf="@id/button_other_symptoms"
+                    app:layout_constraintWidth_percent=".27"
+                    android:background="@drawable/card_layout"
+                    android:elevation="@dimen/elevation_8dp">
+
+                    <TextView
+                        android:id="@+id/button_report_relapse_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        android:text="@string/relapse"
+                        android:textStyle="bold"
+                        android:textColor="@color/red_1"
+                        android:textSize="@dimen/text_size_18sp"
+                        android:gravity="center"
+                        app:drawableStartCompat="@drawable/icon_report_relapse" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <TextView
+                    android:id="@+id/your_month"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/button_report_relapse"
+                    app:layout_constraintBottom_toTopOf="@id/scrollView_your_month"
+                    android:text="@string/your_month"
+                    style="@style/HomeTitle"
+                    app:drawableEndCompat="@drawable/icon_info" />
+
+                <androidx.core.widget.NestedScrollView
+                    android:id="@+id/scrollView_your_month"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:scrollbars="horizontal"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/your_month"
+                    app:layout_constraintBottom_toTopOf="@id/title_progress">
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/your_month_list"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal"
+                        app:layoutManager="LinearLayoutManager"
+                        android:clipToPadding="false"
+                        android:paddingStart="@dimen/margin_8dp"
+                        android:paddingEnd="@dimen/margin_8dp"
+                        tools:listitem="@layout/horizontal_view_card" />
+                </androidx.core.widget.NestedScrollView>
+
+                <TextView
+                    android:id="@+id/title_progress"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/scrollView_your_month"
+                    app:layout_constraintBottom_toTopOf="@id/card_progress"
+                    android:text="@string/your_progress"
+                    style="@style/HomeTitle"
+                    app:drawableEndCompat="@drawable/icon_info" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/card_progress"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@+id/title_progress"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    style="@style/Card">
+
+                    <TextView
+                        android:id="@+id/progress_description"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/your_progress_description"
+                        android:textSize="@dimen/text_size_16sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <include
+                        android:id="@+id/include"
+                        layout="@layout/chart_feeling"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/progress_description" />
+
+                    <Button
+                        android:id="@+id/button_show_all_values"
+                        style="@style/HomeAllButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/large_icon_size"
+                        android:layout_marginEnd="@dimen/margin_8dp"
+                        android:drawablePadding="@dimen/margin_4dp"
+                        android:text="@string/your_progress_show_values"
+                        android:textSize="@dimen/text_size_16sp"
+                        app:drawableEndCompat="@drawable/icon_baseline_arrow_forward"
+                        app:drawableTint="@color/blue_1"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="1"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/include" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <!--<TextView
+                    android:id="@+id/title_reveal"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/card_progress"
+                    app:layout_constraintBottom_toTopOf="@id/scrollView_reveal"
+                    android:text="@string/reveal"
+                    style="@style/HomeTitle" />
+
+                <androidx.core.widget.NestedScrollView
+                    android:id="@+id/scrollView_reveal"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/title_reveal"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:paddingBottom="@dimen/margin_64dp"
+                    android:scrollbars="horizontal">
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/reveal_list"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        app:layoutManager="LinearLayoutManager"
+                        android:orientation="horizontal"
+                        android:clipToPadding="false"
+                        android:paddingStart="@dimen/margin_8dp"
+                        android:paddingEnd="@dimen/margin_8dp"
+                        tools:listitem="@layout/horizontal_view_reveal_card" />
+                </androidx.core.widget.NestedScrollView>-->
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.core.widget.NestedScrollView>
+
+        <com.google.android.material.navigation.NavigationView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="start">
+            <include layout="@layout/home_emendia_ms_menu" />
+        </com.google.android.material.navigation.NavigationView>
+    </androidx.drawerlayout.widget.DrawerLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="@dimen/padding_page_bottom_96dp">
+
+        <TextView
+            android:id="@+id/navigation_back"
+            style="@style/ButtonBack"
+            android:text="@string/start"
+            app:drawableStartCompat="@drawable/icon_baseline_arrow_back"
+            app:drawableTint="@color/blue_1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/medical_query_desc_title"
+            style="@style/HomeTitle"
+            android:text="@string/mfis"
+            app:drawableEndCompat="@drawable/icon_info"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/navigation_back" />
+
+        <TextView
+            android:id="@+id/mfis_overview_1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/EDSSResultsQuestionCard"
+            android:text="@string/mfis_overview_text_1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/medical_query_desc_title"
+            app:layout_constraintBottom_toTopOf="@id/mfis_overall_tv" />
+
+        <TextView
+            android:id="@+id/mfis_overall_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/EDSSResultsQuestionCard"
+            android:text="@string/mfis_overall_text"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/mfis_overview_1"
+            app:layout_constraintBottom_toTopOf="@id/mfis_cognitive_tv" />
+
+        <TextView
+            android:id="@+id/mfis_cognitive_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/EDSSResultsQuestionCard"
+            android:text="@string/mfis_cognitive_text"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/mfis_overall_tv"
+            app:layout_constraintBottom_toTopOf="@id/mfis_motoric_tv" />
+
+        <TextView
+            android:id="@+id/mfis_motoric_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/EDSSResultsQuestionCard"
+            android:text="@string/mfis_motoric_text"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/mfis_cognitive_tv"
+            app:layout_constraintBottom_toTopOf="@id/mfis_psychosocial_tv" />
+
+        <TextView
+            android:id="@+id/mfis_psychosocial_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/EDSSResultsQuestionCard"
+            android:text="@string/mfis_psychosocial_text"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/mfis_motoric_tv"
+            app:layout_constraintBottom_toTopOf="@id/mfis_overview3" />
+
+        <TextView
+            android:id="@+id/mfis_overview3"
+            style="@style/EDSSResultsQuestionCard"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/edss_overview_msg_3"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/mfis_psychosocial_tv"
+            app:layout_constraintBottom_toTopOf="@id/mfis_overview4" />
+
+        <TextView
+            android:id="@+id/mfis_overview4"
+            style="@style/EDSSResultsQuestionCard"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/edss_overview_msg_4"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/mfis_overview3"
+            app:layout_constraintBottom_toTopOf="@id/mfis_overview_fertig_button" />
+
+        <Button
+            android:id="@+id/mfis_overview_fertig_button"
+            style="@style/Button"
+            android:layout_marginTop="@dimen/margin_32dp"
+            android:text="@string/finished"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/mfis_overview4" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>

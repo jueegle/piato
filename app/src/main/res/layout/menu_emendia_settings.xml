@@ -1,0 +1,285 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/home_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="@dimen/margin_64dp">
+
+            <TextView
+                android:id="@+id/navigation_back"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:text="@string/app_name"
+                app:drawableStartCompat="@drawable/icon_baseline_arrow_back"
+                app:drawableTint="@color/blue_1"
+                style="@style/ButtonBack" />
+
+            <TextView
+                android:id="@+id/emendia_settings_title_settings"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/navigation_back"
+                android:text="@string/menu_settings"
+                android:textSize="28sp"
+                app:drawableTint="@color/blue_1"
+                style="@style/HomeTitle" />
+            
+            <TextView
+                android:id="@+id/emendia_settings_title_configuration"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/emendia_settings_title_settings"
+                android:layout_marginTop="@dimen/margin_8dp"
+                android:text="@string/configuration"
+                app:drawableTint="@color/blue_1"
+                style="@style/HomeTitle" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/emendia_settings_conLay_emendia_id"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/no_img_card_item_height"
+                android:layout_margin="@dimen/margin_16dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/emendia_settings_title_configuration"
+                style="@style/ImageCard">
+
+                <TextView
+                    android:id="@+id/emendia_settings_title_emendia_id"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_16dp"
+                    android:text="@string/emendia_id"
+                    android:textColor="@color/blue_1"
+                    android:textStyle="bold"
+                    android:textSize="@dimen/text_size_18sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:drawablePadding="@dimen/margin_8dp"
+                    app:drawableStartCompat="@drawable/ic_emendia_id"
+                    app:drawableTint="@color/blue_1" />
+
+                <ImageView
+                    android:layout_width="@dimen/icon_size"
+                    android:layout_height="@dimen/icon_size"
+                    android:layout_marginEnd="@dimen/margin_16dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:srcCompat="@drawable/icon_baseline_keyboard_arrow_right"
+                    app:tint="@color/blue_1"
+                    android:contentDescription="@string/placeholder_icon" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/emendia_settings_conLay_news"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/no_img_card_item_height"
+                android:layout_margin="@dimen/margin_16dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/emendia_settings_conLay_emendia_id"
+                style="@style/ImageCard">
+
+                <TextView
+                    android:id="@+id/emendia_settings_title_news"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_16dp"
+                    android:text="@string/news"
+                    android:textColor="@color/blue_1"
+                    android:textStyle="bold"
+                    android:textSize="@dimen/text_size_18sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:drawablePadding="@dimen/margin_8dp"
+                    app:drawableStartCompat="@drawable/ic_baseline_message_24"
+                    app:drawableTint="@color/blue_1" />
+
+                <ImageView
+                    android:layout_width="@dimen/icon_size"
+                    android:layout_height="@dimen/icon_size"
+                    android:layout_marginEnd="@dimen/margin_16dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:srcCompat="@drawable/icon_baseline_keyboard_arrow_right"
+                    app:tint="@color/blue_1"
+                    android:contentDescription="@string/placeholder_icon" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/emendia_settings_conLay_safety"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/no_img_card_item_height"
+                android:layout_margin="@dimen/margin_16dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/emendia_settings_conLay_news"
+                style="@style/ImageCard">
+
+                <TextView
+                    android:id="@+id/emendia_settings_title_safety"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_16dp"
+                    android:text="@string/safety"
+                    android:textColor="@color/blue_1"
+                    android:textStyle="bold"
+                    android:textSize="@dimen/text_size_18sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:drawablePadding="@dimen/margin_8dp"
+                    app:drawableStartCompat="@drawable/ic_safety"
+                    app:drawableTint="@color/blue_1" />
+
+                <ImageView
+                    android:layout_width="@dimen/icon_size"
+                    android:layout_height="@dimen/icon_size"
+                    android:layout_marginEnd="@dimen/margin_16dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:srcCompat="@drawable/icon_baseline_keyboard_arrow_right"
+                    app:tint="@color/blue_1"
+                    android:contentDescription="@string/placeholder_icon" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <TextView
+                android:id="@+id/emendia_settings_title_legal"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/emendia_settings_conLay_safety"
+                android:layout_marginTop="@dimen/margin_16dp"
+                android:text="@string/menu_legal"
+                app:drawableTint="@color/blue_1"
+                style="@style/HomeTitle" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/emendia_settings_conLay_data_protection"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/no_img_card_item_height"
+                android:layout_margin="@dimen/margin_16dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/emendia_settings_title_legal"
+                style="@style/ImageCard">
+
+                <TextView
+                    android:id="@+id/emendia_settings_title_data_protection"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_16dp"
+                    android:text="@string/data_protection"
+                    android:textColor="@color/blue_1"
+                    android:textStyle="bold"
+                    android:textSize="@dimen/text_size_18sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:drawablePadding="@dimen/margin_8dp"
+                    app:drawableStartCompat="@drawable/ic_data_protection"
+                    app:drawableTint="@color/blue_1" />
+
+                <ImageView
+                    android:layout_width="@dimen/icon_size"
+                    android:layout_height="@dimen/icon_size"
+                    android:layout_marginEnd="@dimen/margin_16dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:srcCompat="@drawable/icon_baseline_keyboard_arrow_right"
+                    app:tint="@color/blue_1"
+                    android:contentDescription="@string/placeholder_icon" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/emendia_settings_conLay_impressum"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/no_img_card_item_height"
+                android:layout_margin="@dimen/margin_16dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/emendia_settings_conLay_data_protection"
+                style="@style/ImageCard">
+
+                <TextView
+                    android:id="@+id/emendia_settings_title_impressum"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_16dp"
+                    android:text="@string/impressum"
+                    android:textColor="@color/blue_1"
+                    android:textStyle="bold"
+                    android:textSize="@dimen/text_size_18sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:drawablePadding="@dimen/margin_8dp"
+                    app:drawableStartCompat="@drawable/icon_questionnaires"
+                    app:drawableTint="@color/blue_1" />
+
+                <ImageView
+                    android:layout_width="@dimen/icon_size"
+                    android:layout_height="@dimen/icon_size"
+                    android:layout_marginEnd="@dimen/margin_16dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:srcCompat="@drawable/icon_baseline_keyboard_arrow_right"
+                    app:tint="@color/blue_1"
+                    android:contentDescription="@string/placeholder_icon" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/emendia_settings_conLay_terms_of_use"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/no_img_card_item_height"
+                android:layout_margin="@dimen/margin_16dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/emendia_settings_conLay_impressum"
+                app:layout_constraintBottom_toBottomOf="parent"
+                style="@style/ImageCard">
+
+                <TextView
+                    android:id="@+id/emendia_settings_title_terms_of_use"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_16dp"
+                    android:text="@string/terms_of_use"
+                    android:textColor="@color/blue_1"
+                    android:textStyle="bold"
+                    android:textSize="@dimen/text_size_18sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:drawablePadding="@dimen/margin_8dp"
+                    app:drawableStartCompat="@drawable/ic_baseline_mobile_friendly_24"
+                    app:drawableTint="@color/blue_1" />
+
+                <ImageView
+                    android:layout_width="@dimen/icon_size"
+                    android:layout_height="@dimen/icon_size"
+                    android:layout_marginEnd="@dimen/margin_16dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:srcCompat="@drawable/icon_baseline_keyboard_arrow_right"
+                    app:tint="@color/blue_1"
+                    android:contentDescription="@string/placeholder_icon" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

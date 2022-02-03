@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:focusableInTouchMode="true"
+        android:clickable="true"
+        android:focusable="true"
+        android:id="@+id/home_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingBottom="@dimen/padding_page_bottom_96dp">
+
+        <TextView
+            android:id="@+id/navigation_back"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:text="@string/configuration"
+            app:drawableStartCompat="@drawable/icon_baseline_arrow_back"
+            app:drawableTint="@color/blue_1"
+            style="@style/ButtonBack" />
+
+        <TextView
+            android:id="@+id/emendia_settings_news_title"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/navigation_back"
+            android:text="@string/news"
+            style="@style/HomeTitle" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/emendia_settings_news_conLay_switch_questionnaires"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/no_img_card_item_height"
+            android:layout_margin="@dimen/margin_16dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/emendia_settings_news_title"
+            style="@style/ImageCard">
+
+            <com.google.android.material.switchmaterial.SwitchMaterial
+                android:id="@+id/emendia_settings_news_switch_text_questionnaires"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="@dimen/margin_16dp"
+                android:layout_marginEnd="@dimen/margin_16dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:text="@string/questionnaires"
+                android:textSize="@dimen/text_size_18sp" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/emendia_settings_news_conLay_switch_messages"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/no_img_card_item_height"
+            android:layout_margin="@dimen/margin_16dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/emendia_settings_news_conLay_switch_questionnaires"
+            app:layout_constraintBottom_toBottomOf="parent"
+            style="@style/ImageCard">
+
+            <com.google.android.material.switchmaterial.SwitchMaterial
+                android:id="@+id/emendia_settings_news_switch_text_news"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="@dimen/margin_16dp"
+                android:layout_marginEnd="@dimen/margin_16dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:text="@string/messages"
+                android:textSize="@dimen/text_size_18sp" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>

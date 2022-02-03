@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/legendLayout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:orientation="vertical"
+    tools:ignore="HardcodedText">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/legendText1"
+            android:text="Mo"
+            style="@style/CalendarLegendText" />
+
+        <TextView
+            android:id="@+id/legendText2"
+            android:text="Di"
+            style="@style/CalendarLegendText" />
+
+        <TextView
+            android:id="@+id/legendText3"
+            android:text="Mi"
+            style="@style/CalendarLegendText" />
+
+        <TextView
+            android:id="@+id/legendText4"
+            android:text="Do"
+            style="@style/CalendarLegendText"/>
+
+        <TextView
+            android:id="@+id/legendText5"
+            android:text="Fr"
+            style="@style/CalendarLegendText" />
+
+        <TextView
+            android:id="@+id/legendText6"
+            android:text="Sa"
+            style="@style/CalendarLegendText"/>
+
+        <TextView
+            android:id="@+id/legendText7"
+            android:text="So"
+            style="@style/CalendarLegendText"/>
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginHorizontal="@dimen/margin_12dp"
+        android:background="@color/gray_2"/>
+
+</LinearLayout>

@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tool="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clickable="true"
+    android:focusable="true"
+    android:focusableInTouchMode="true">
+
+    <TextView
+        android:id="@+id/navigation_back"
+        style="@style/ButtonBack"
+        android:elevation="1dp"
+        android:text="@string/start"
+        app:drawableStartCompat="@drawable/icon_baseline_arrow_back"
+        app:drawableTint="@color/blue_1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/title_report_relapse_overview_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_8dp"
+        android:textColor="@color/blue_2"
+        android:textSize="@dimen/text_size_18sp"
+        app:layout_constraintStart_toStartOf="@+id/title_report_relapse_overview"
+        app:layout_constraintTop_toBottomOf="@+id/title_report_relapse_overview"
+        tool:text="@string/placeholder_date" />
+
+    <TextView
+        android:id="@+id/title_report_relapse_overview"
+        style="@style/HomeTitle"
+        android:layout_marginTop="@dimen/margin_16dp"
+        android:text="@string/report_relapse_overview"
+        android:textSize="@dimen/text_size_24sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/navigation_back" />
+
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="@dimen/margin_8dp"
+        app:layout_constraintBottom_toTopOf="@+id/report_relapse_bottom_navigation_button_cl"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/title_report_relapse_overview_tv">
+
+        <LinearLayout
+            android:id="@+id/relapse_ll"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="@dimen/margin_8dp"
+            android:paddingBottom="@dimen/margin_8dp"
+            android:orientation="vertical">
+
+            <TextView
+                style="@style/ReportRelapseQuestionText"
+                android:text="@string/report_relapse_noted_relapse" />
+
+            <TextView
+                style="@style/ReportRelapseQuestionText"
+                android:text="@string/report_relapse_please_check_input" />
+
+            <TextView
+                style="@style/ReportRelapseQuestionText"
+                android:text="@string/report_relapse_last_24_hours" />
+
+            <TextView
+                style="@style/ReportRelapseInputText"
+                android:text="@string/yes" />
+        </LinearLayout>
+    </ScrollView>
+
+    <include
+        android:id="@+id/report_relapse_bottom_navigation_button_cl"
+        layout="@layout/layout_bottom_navigation" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
